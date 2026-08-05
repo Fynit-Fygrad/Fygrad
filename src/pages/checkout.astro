@@ -1,0 +1,277 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import pkg from 'lucide-react';
+const { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } = pkg;
+---
+
+<Layout title="FyGrad | Checkout">
+	<Navbar />
+	<main class="w-full flex flex-col font-sans">
+		
+		{/* Top Dark Banner */}
+		<section class="w-full bg-[#132338] text-white px-8 md:px-12 pt-8 pb-16">
+			<div class="max-w-6xl mx-auto flex flex-col space-y-6">
+				{/* Breadcrumbs */}
+				<div class="text-sm font-medium text-gray-400 flex items-center space-x-2">
+					<a href="/" class="hover:text-white transition-colors">Inicio</a>
+					<span>/</span>
+					<a href="/checkout" class="hover:text-white transition-colors">Carrito</a>
+					<span>/</span>
+					<span class="text-[#f97316]">Pasarela de pago</span>
+				</div>
+				
+				{/* Headings */}
+				<div class="flex flex-col space-y-1">
+					<h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight">Confirma tu pedido</h1>
+					<h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#f97316]">Y paga con seguridad</h2>
+				</div>
+			</div>
+		</section>
+
+		{/* Checkout Content area */}
+		<section class="w-full bg-[#f8fafc] text-[#0f172a] px-4 md:px-12 py-12 relative flex-grow min-h-screen">
+			<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+				
+				{/* Left Column: Order Summary */}
+				<div class="lg:col-span-5 flex flex-col">
+					<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden relative pb-8">
+						
+						<div class="p-8">
+							<div class="flex justify-between items-start mb-8">
+								<div class="flex flex-col">
+									<span class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-1">[ RESUMEN DE PEDIDO ]</span>
+									<h3 class="text-xl font-black tracking-wide">TU CARRITO</h3>
+								</div>
+								<div class="flex flex-col items-end">
+									<span class="text-[10px] font-bold text-gray-400 tracking-widest uppercase mb-1">Nº ORDEN</span>
+									<span class="text-sm font-bold">FYG-2026-00184</span>
+								</div>
+							</div>
+
+							{/* Dashed divider */}
+							<div class="w-full border-t border-dashed border-gray-200 mb-6"></div>
+
+							{/* Item 1 */}
+							<div class="flex flex-col mb-8">
+								<div class="flex justify-between items-start mb-2">
+									<h4 class="font-bold text-[15px]">Publication Lab</h4>
+									<span class="font-bold">S/ 1,200.00</span>
+								</div>
+								<p class="text-sm text-gray-500 leading-tight mb-3">Plan Editorial Completo —<br/>revistas indexadas Scopus/WoS</p>
+								<div class="flex items-center space-x-3 w-fit border border-gray-200 rounded-full px-3 py-1">
+									<button class="text-gray-400 hover:text-black transition-colors"><Minus size={14} strokeWidth={3} /></button>
+									<span class="text-sm font-bold w-4 text-center">1</span>
+									<button class="text-gray-400 hover:text-black transition-colors"><Plus size={14} strokeWidth={3} /></button>
+								</div>
+							</div>
+
+							{/* Item 2 */}
+							<div class="flex flex-col mb-8">
+								<div class="flex justify-between items-start mb-2">
+									<h4 class="font-bold text-[15px]">Academy</h4>
+									<span class="font-bold">S/ 350.00</span>
+								</div>
+								<p class="text-sm text-gray-500 leading-tight mb-3">Taller de redacción científica bajo IMRyD</p>
+								<div class="flex items-center space-x-3 w-fit border border-gray-200 rounded-full px-3 py-1">
+									<button class="text-gray-400 hover:text-black transition-colors"><Minus size={14} strokeWidth={3} /></button>
+									<span class="text-sm font-bold w-4 text-center">1</span>
+									<button class="text-gray-400 hover:text-black transition-colors"><Plus size={14} strokeWidth={3} /></button>
+								</div>
+							</div>
+
+							{/* Dashed divider */}
+							<div class="w-full border-t border-dashed border-gray-200 mb-6"></div>
+
+							{/* Subtotals */}
+							<div class="flex flex-col space-y-2 mb-6">
+								<div class="flex justify-between text-sm text-gray-500 font-medium">
+									<span>Subtotal</span>
+									<span>S/ 1,313.56</span>
+								</div>
+								<div class="flex justify-between text-sm text-gray-500 font-medium">
+									<span>IGV (18%)</span>
+									<span>S/ 236.44</span>
+								</div>
+							</div>
+
+							{/* Total */}
+							<div class="flex justify-between items-center mb-8">
+								<span class="text-lg font-black">Total a pagar</span>
+								<span class="text-xl font-black text-[#f97316]">S/ 1,550.00</span>
+							</div>
+
+							{/* Back Button */}
+							<a href="/servicios" class="flex items-center justify-center w-full space-x-2 py-3 rounded-full border border-gray-300 font-bold text-sm hover:bg-gray-50 transition-colors text-black">
+								<ArrowLeft size={16} strokeWidth={2.5} />
+								<span>Seguir explorando servicios</span>
+							</a>
+						</div>
+						
+						{/* Zigzag bottom border effect */}
+						<div class="absolute bottom-0 left-0 w-full h-3 flex overflow-hidden">
+							{Array.from({ length: 30 }).map(() => (
+								<div class="w-4 h-4 bg-[#f8fafc] transform rotate-45 translate-y-2 -mx-[2px] border-t border-l border-gray-100"></div>
+							))}
+						</div>
+					</div>
+					
+					{/* Barcode decorative element */}
+					<div class="mt-4 flex space-x-1 pl-8 items-end h-8">
+						<div class="w-1 bg-gray-300 h-8"></div>
+						<div class="w-[2px] bg-gray-300 h-6"></div>
+						<div class="w-1 bg-gray-300 h-7"></div>
+						<div class="w-[3px] bg-gray-300 h-5"></div>
+						<div class="w-1 bg-gray-300 h-8"></div>
+						<div class="w-[2px] bg-gray-300 h-7"></div>
+						<div class="w-1 bg-gray-300 h-6"></div>
+						<div class="w-[2px] bg-gray-300 h-8"></div>
+						<div class="w-1 bg-gray-300 h-5"></div>
+						<div class="w-[2px] bg-gray-300 h-7"></div>
+						<div class="w-1 bg-gray-300 h-6"></div>
+						<div class="w-[3px] bg-gray-300 h-8"></div>
+						<div class="w-1 bg-gray-300 h-7"></div>
+						<div class="w-[2px] bg-gray-300 h-5"></div>
+						<div class="w-1 bg-gray-300 h-8"></div>
+						<div class="w-[2px] bg-gray-300 h-6"></div>
+						<div class="w-1 bg-gray-300 h-7"></div>
+					</div>
+				</div>
+
+				{/* Right Column: Payment Method */}
+				<div class="lg:col-span-7 flex flex-col">
+					<div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+						
+						<div class="flex flex-col mb-8">
+							<span class="text-[10px] font-bold text-[#f97316] tracking-widest uppercase mb-1">CHECKOUT SEGURO</span>
+							<h3 class="text-2xl font-black tracking-wide">Método de pago</h3>
+						</div>
+
+						{/* Payment Tabs */}
+						<div class="flex bg-gray-100 rounded-full p-1 mb-8">
+							<button class="flex-1 bg-[#0f172a] text-white text-sm font-bold rounded-full py-3 text-center transition-colors shadow-sm">
+								Tarjeta
+							</button>
+							<button class="flex-1 text-gray-500 hover:text-gray-900 text-sm font-bold rounded-full py-3 text-center transition-colors">
+								Yape / Plin
+							</button>
+							<button class="flex-1 text-gray-500 hover:text-gray-900 text-sm font-bold rounded-full py-3 text-center transition-colors">
+								Transferencia
+							</button>
+						</div>
+
+						{/* Payment Form */}
+						<form class="flex flex-col space-y-6">
+							
+							{/* Card Name */}
+							<div class="flex flex-col space-y-2">
+								<label class="text-xs font-bold text-gray-800">Nombre en la tarjeta</label>
+								<input 
+									type="text" 
+									placeholder="Como aparece en la tarjeta" 
+									class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+								/>
+							</div>
+
+							{/* Card Number */}
+							<div class="flex flex-col space-y-2 relative">
+								<label class="text-xs font-bold text-gray-800">Número de tarjeta</label>
+								<div class="relative">
+									<input 
+										type="text" 
+										placeholder="0000 0000 0000 0000" 
+										class="w-full border border-gray-300 rounded-lg pl-4 pr-12 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+									/>
+									<div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+										<CreditCard size={20} strokeWidth={1.5} />
+									</div>
+								</div>
+							</div>
+
+							{/* Grid: DNI, Vencimiento, CVV */}
+							<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+								<div class="flex flex-col space-y-2">
+									<label class="text-xs font-bold text-gray-800">DNI / RUC</label>
+									<input 
+										type="text" 
+										placeholder="00000000" 
+										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+									/>
+								</div>
+								<div class="flex flex-col space-y-2">
+									<label class="text-xs font-bold text-gray-800">Vencimiento</label>
+									<input 
+										type="text" 
+										placeholder="MM / AA" 
+										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+									/>
+								</div>
+								<div class="flex flex-col space-y-2">
+									<label class="text-xs font-bold text-gray-800 flex items-center space-x-1">
+										<span>CVV</span>
+										<HelpCircle size={14} class="text-gray-400" />
+									</label>
+									<input 
+										type="text" 
+										placeholder="123" 
+										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+									/>
+								</div>
+							</div>
+
+							{/* Save card checkbox */}
+							<div class="flex items-center space-x-3 pt-2">
+								<input 
+									type="checkbox" 
+									id="save-card" 
+									class="w-4 h-4 rounded border-gray-300 text-[#00a2af] focus:ring-[#00a2af]"
+								/>
+								<label for="save-card" class="text-sm text-gray-500 font-medium cursor-pointer">
+									Guardar esta tarjeta para futuros pagos
+								</label>
+							</div>
+
+							{/* Submit Button */}
+							<div class="pt-4 pb-2">
+								<button type="button" class="w-full bg-[#f97316] hover:bg-[#ea580c] text-white rounded-full py-4 font-bold text-lg transition-colors flex items-center justify-center space-x-2 relative shadow-md">
+									<span>Confirmar y pagar S/ 1,550.00</span>
+									<div class="absolute right-6">
+										<Lock size={20} strokeWidth={2.5} />
+									</div>
+								</button>
+							</div>
+
+							{/* Security Notice */}
+							<div class="flex flex-col items-center justify-center text-[#00a2af] space-y-1 pb-4">
+								<Lock size={16} strokeWidth={2} />
+								<span class="text-xs font-medium text-gray-400">Pago protegido con cifrado SSL de 256 bits</span>
+							</div>
+
+							{/* Payment Methods Logos */}
+							<div class="flex flex-wrap justify-center gap-2 md:gap-3 pt-4 border-t border-gray-100">
+								<div class="border border-gray-200 rounded px-3 py-1.5 text-[10px] font-bold text-gray-500 tracking-wider">VISA</div>
+								<div class="border border-gray-200 rounded px-3 py-1.5 text-[10px] font-bold text-gray-500 tracking-wider">MASTERCARD</div>
+								<div class="border border-gray-200 rounded px-3 py-1.5 text-[10px] font-bold text-gray-500 tracking-wider">AMEX</div>
+								<div class="border border-gray-200 rounded px-3 py-1.5 text-[10px] font-bold text-gray-500 tracking-wider">DINERS</div>
+								<div class="border border-gray-200 rounded px-3 py-1.5 text-[10px] font-bold text-gray-500 tracking-wider">YAPE</div>
+								<div class="border border-gray-200 rounded px-3 py-1.5 text-[10px] font-bold text-gray-500 tracking-wider">PLIN</div>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		{/* Simple Footer */}
+		<footer class="w-full bg-white text-[#64748b] border-t border-gray-200 py-8 px-4 md:px-12 flex flex-col md:flex-row items-center justify-between font-sans">
+			<div class="text-xs font-medium mb-4 md:mb-0">
+				© 2026 FyGrad — Research Lab. Todos los derechos reservados.
+			</div>
+			<div class="text-xs font-bold text-[#0f172a]">
+				¿Necesitas ayuda con tu pago? <a href="/contacto" class="text-[#f97316] underline underline-offset-2">Contáctanos</a>
+			</div>
+		</footer>
+
+	</main>
+</Layout>
