@@ -7,11 +7,14 @@ const { ChevronDown } = pkg;
   {/* Background Image Placeholder / Overlay */}
   <div class="absolute inset-0 bg-[#132338]/80 z-10"></div>
   <div class="absolute inset-0 z-0">
-    <img 
-      src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=2070" 
-      alt="Science Background" 
-      class="w-full h-full object-cover mix-blend-overlay opacity-60"
-    />
+    <video 
+      src="/assets/Video de fondo.mp4" 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      class="w-full h-full object-cover opacity-60"
+    ></video>
   </div>
 
   {/* Content */}
@@ -37,6 +40,6 @@ const { ChevronDown } = pkg;
 
   {/* Scroll Down Arrow */}
   <div class="absolute bottom-4 md:bottom-8 z-20 animate-bounce">
-    <ChevronDown size={80} class="text-white md:w-[96px] md:h-[96px]" strokeWidth={1.2} />
+    <ChevronDown size={80} className="text-white md:w-[96px] md:h-[96px]" strokeWidth={1.2} />
   </div>
 </section>

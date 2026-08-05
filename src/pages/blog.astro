@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Search, ArrowRight } from 'lucide-react';
+
+const articles = [
+  {
+    category: 'CASOS DE ÉXITO',
+    title: '[Insertar Título de Historia o Caso de Éxito Aquí]',
+    description: '[Insertar breve descripción de la experiencia de publicación o caso resuelto aquí...]',
+    author: 'Nombre del Investigador'
+  },
+  {
+    category: 'ESTRATEGIA',
+    title: '[Insertar Título de Guía de Indexación Scopus/WoS Aquí]',
+    description: '[Insertar breve descripción de la estrategia de selección de revista o subsidios APC aquí...]',
+    author: 'Nombre del Editor'
+  },
+  {
+    category: 'METODOLOGÍA',
+    title: '[Insertar Título de Tutorial de Metodología o Análisis de Datos Aquí]',
+    description: '[Insertar breve descripción sobre limpieza de datos, herramientas R/Python o citación aquí...]',
+    author: 'Nombre del Especialista'
+  },
+  {
+    category: 'TENDENCIAS',
+    title: '[Insertar Título sobre Uso Ético de IA o Normas COPE Aquí]',
+    description: '[Insertar breve descripción sobre políticas de transparencia, detectores anti-plagio o tendencias aquí...]',
+    author: 'Nombre del Autor'
+  },
+  {
+    category: 'CASOS DE ÉXITO',
+    title: '[Insertar Título de Análisis de Manuscrito o Réplica a Revisores Aquí]',
+    description: '[Insertar breve descripción de la estrategia de respuesta a pares evaluadores aquí...]',
+    author: 'Nombre del Investigador'
+  },
+  {
+    category: 'ESTRATEGIA',
+    title: '[Insertar Título sobre Factor de Impacto o Selección de Quartil Aquí]',
+    description: '[Insertar breve descripción sobre evaluación de métricas SJR/JCR y visibilidad de citas aquí...]',
+    author: 'Nombre del Consultor'
+  }
+];
+---
+
+<Layout title="Blog & Artículos | FyGrad">
+  <Navbar />
+
+  <main class="w-full flex flex-col items-center bg-white">
+    
+    {/* 1. Hero Blog */}
+    <section class="w-full bg-[#132338] pt-32 pb-24 px-8 relative overflow-hidden flex justify-center">
+      {/* Decorative Background Shapes */}
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1a2c47] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 opacity-50 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#0c1624] rounded-full blur-[120px] translate-y-1/3 opacity-80 pointer-events-none"></div>
+      
+      {/* Curve overlay for the bottom edge */}
+      <div class="absolute -bottom-[150px] left-1/2 -translate-x-1/2 w-[150%] h-[200px] bg-white rounded-[100%]"></div>
+
+      <div class="max-w-6xl lg:max-w-[75rem] w-full relative z-10 flex flex-col pt-4 pb-12">
+        <div class="flex items-center space-x-2 text-sm font-bold tracking-widest mb-6 uppercase">
+          <span class="text-[#8c96a4]">INICIO</span>
+          <span class="text-[#e68424]">/</span>
+          <span class="text-[#e68424]">BLOG</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-black leading-[1] tracking-tighter uppercase mb-6 max-w-4xl">
+          <span class="text-white">BLOG &</span>
+          <span class="text-[#e68424]">ARTÍCULOS</span>
+        </h1>
+        
+        <p class="text-[#8c96a4] text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+          Bitácora científica y novedades sobre indexación, metodología y escritura científica.
+        </p>
+
+        {/* Search Bar */}
+        <div class="relative max-w-md w-full">
+          <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+          <input 
+            type="text" 
+            placeholder="Buscar artículos por título o categoría..." 
+            class="w-full bg-white/5 border border-white/10 text-white rounded-lg py-4 pl-12 pr-4 outline-none focus:border-[#e68424] focus:bg-white/10 transition-colors placeholder:text-gray-500 text-sm"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* 2. Filtros de Categoría */}
+    <section class="w-full px-8 flex justify-center py-8">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-wrap gap-4 items-center justify-center md:justify-start">
+        <button class="px-6 py-2.5 rounded-full bg-[#121a2f] text-white text-xs font-bold border border-[#121a2f]">
+          Todos los artículos
+        </button>
+        <button class="px-6 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+          Casos de Éxito
+        </button>
+        <button class="px-6 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+          Estrategia e Indexación
+        </button>
+        <button class="px-6 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+          Metodología y Datos
+        </button>
+        <button class="px-6 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+          Tendencias y Ética
+        </button>
+      </div>
+    </section>
+
+    {/* 3. Artículo Destacado */}
+    <section class="w-full px-8 flex justify-center py-10">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full">
+        
+        <div class="w-full bg-white border border-gray-200 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 md:gap-12 shadow-sm">
+          {/* Image Placeholder */}
+          <div class="w-full md:w-[55%] bg-[#f8fafc] rounded-2xl border border-gray-100 min-h-[300px] flex items-center justify-center">
+            <span class="text-gray-300 font-bold uppercase tracking-widest text-xs">[ ARCHIVE COVER ]</span>
+          </div>
+          
+          {/* Content */}
+          <div class="w-full md:w-[45%] flex flex-col justify-center py-4">
+            <span class="text-[#94a3b8] font-bold text-[10px] tracking-widest uppercase mb-4 inline-block">
+              [ CASOS DE ÉXITO ]
+            </span>
+            <h2 class="text-[#121a2f] font-black text-2xl md:text-3xl leading-tight mb-6 uppercase">
+              [INSERTAR TÍTULO DE CASO DE ÉXITO / HISTORIA REAL AQUÍ]
+            </h2>
+            <p class="text-gray-500 text-sm leading-relaxed mb-10">
+              [Insertar resumen del caso de éxito: por ejemplo, cómo se resolvió una revisión mayor de un manuscrito o cómo se logró publicar en un journal Q1 en tiempo récord.]
+            </p>
+            
+            <div class="mt-auto border-t border-gray-100 pt-6 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+              <span class="text-[#121a2f] font-bold text-xs">
+                Por [Nombre del Investigador]
+              </span>
+              <a href="#" class="text-[#e68424] font-bold text-xs hover:text-[#cf741d] transition-colors flex items-center space-x-1">
+                <span>Leer historia completa</span>
+                <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    {/* 4. Grilla de Artículos Secundarios */}
+    <section class="w-full px-8 flex justify-center pb-24">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {articles.map((article) => (
+            <div class="bg-white border border-gray-200 rounded-3xl p-8 flex flex-col shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+              <span class="text-[#94a3b8] font-bold text-[10px] tracking-widest uppercase mb-4 inline-block">
+                [ {article.category} ]
+              </span>
+              <h3 class="text-[#121a2f] font-bold text-lg leading-snug mb-4">
+                {article.title}
+              </h3>
+              <p class="text-gray-500 text-xs leading-relaxed mb-8 line-clamp-3">
+                {article.description}
+              </p>
+              
+              <div class="mt-auto border-t border-gray-100 pt-6 flex justify-between items-center">
+                <span class="text-gray-400 font-medium text-xs">
+                  Por [{article.author}]
+                </span>
+                <ArrowRight size={14} className="text-gray-300 group-hover:text-[#e68424] transition-colors transform group-hover:translate-x-1 duration-300" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    {/* 5. Newsletter */}
+    <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center text-center">
+      <div class="max-w-xl w-full flex flex-col items-center">
+        <h2 class="text-3xl md:text-4xl font-black text-[#121a2f] leading-none tracking-tighter uppercase mb-6">
+          RECIBE NOVEDADES
+        </h2>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed mb-12">
+          Entérate de las nuevas publicaciones científicas, análisis de casos y guías editoriales del equipo.
+        </p>
+        
+        {/* Newsletter Form (Minimalist Underline) */}
+        <form class="w-full max-w-sm flex items-center border-b-2 border-gray-400 pb-2 group focus-within:border-[#121a2f] transition-colors">
+          <input 
+            type="email" 
+            placeholder="tu@correo.com" 
+            required
+            class="w-full bg-transparent border-none outline-none text-[#121a2f] placeholder:text-gray-400 text-sm font-medium px-2"
+          />
+          <button 
+            type="submit" 
+            class="text-[#e68424] font-bold text-xs hover:text-[#cf741d] transition-colors uppercase tracking-widest pl-4 shrink-0"
+          >
+            SUSCRIBIRME
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

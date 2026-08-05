@@ -1,43 +1,58 @@
-# Astro Starter Kit: Minimal
+# FyGrad
+
+**Science, published.**
+FyGrad es una plataforma moderna orientada a la investigación y la ciencia, construida con [Astro](https://astro.build) y [Tailwind CSS](https://tailwindcss.com).
+
+## 🚀 Requisitos Previos
+
+Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18 o superior) en tu sistema.
+
+## 🛠 Instalación y Configuración
+
+Sigue estos pasos para correr el proyecto de forma local en tu computadora:
+
+1. **Clona el repositorio** o descarga el código.
+2. **Abre una terminal** en la raíz del proyecto (la carpeta donde se encuentra este archivo `README.md`).
+3. **Instala las dependencias** ejecutando el siguiente comando:
+   ```sh
+   npm install
+   ```
+
+## 💻 Entorno de Desarrollo
+
+Para iniciar el servidor local y visualizar la web mientras trabajas:
 
 ```sh
-npm create astro@latest -- --template minimal
+npm run dev
+```
+Esto iniciará el servidor de desarrollo de Astro. Abre tu navegador y dirígete a `http://localhost:4321`. Cualquier cambio que guardes en el código se reflejará instantáneamente en el navegador.
+
+## 🏗 Construcción para Producción
+
+Cuando estés listo para subir tu web a internet (producción):
+
+```sh
+npm run build
+```
+Esto generará los archivos estáticos hiper-optimizados de tu sitio dentro de la carpeta `dist/`. Esos son los archivos que subirás a tu servidor, hosting o servicio en la nube (como Vercel, Netlify, GitHub Pages, etc.).
+
+También puedes previsualizar cómo quedó tu build de producción de manera local con:
+```sh
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/       # Archivos estáticos como imágenes, íconos y videos (Ej. /assets/Video de fondo.mp4)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/ # Componentes reutilizables (Navbar, Footer, Hero, etc.)
+│   ├── layouts/    # Plantillas base (Layout.astro)
+│   ├── pages/      # Vistas de la aplicación. Astro enruta automáticamente cada .astro aquí
+│   │   ├── index.astro       # Landing Page
+│   │   ├── nosotros.astro    # Página de Nosotros
+│   │   └── proyectos/        # Rutas dinámicas de detalle (Ej. [slug].astro)
+│   └── data/       # Bases de datos y configuraciones estáticas (Ej. projects.ts)
+└── package.json    # Dependencias y scripts de Node.js
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

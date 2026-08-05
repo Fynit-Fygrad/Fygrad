@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { ArrowRight } from 'lucide-react';
+
+// Sample data for the team to make it easy to edit later
+const teamMembers = [
+  {
+    name: 'Dr. Carlos Mendoza',
+    role: 'Director General y Editor en Jefe',
+    department: 'GERENCIA',
+    bgClass: 'bg-[#fff5eb]',
+    badgeClass: 'bg-[#e68424] text-white',
+  },
+  {
+    name: 'Dra. Sofía Valenzuela',
+    role: 'Coordinadora de Publicaciones',
+    department: 'GERENCIA',
+    bgClass: 'bg-[#ecfdf5]', // soft green
+    badgeClass: 'bg-[#e68424] text-white',
+  },
+  {
+    name: 'Dra. Lucía Ortega',
+    role: 'Directora de Mentoring (Academy)',
+    department: 'MARKETING',
+    bgClass: 'bg-[#f8fafc]', // soft gray
+    badgeClass: 'bg-[#121a2f] text-white',
+  },
+  {
+    name: 'Dra. Elena Rostova',
+    role: 'Asesora Metodológica Principal',
+    department: 'MARKETING',
+    bgClass: 'bg-[#fff5eb]',
+    badgeClass: 'bg-[#121a2f] text-white',
+  },
+  {
+    name: 'M.Sc. Mateo Díaz',
+    role: 'Científico de Datos',
+    department: 'SISTEMAS',
+    bgClass: 'bg-[#ecfdf5]',
+    badgeClass: 'bg-[#eab308] text-white', // yellow
+  },
+  {
+    name: 'Dr. Andrés Murillo',
+    role: 'Investigador Senior',
+    department: 'MARKETING',
+    bgClass: 'bg-[#f8fafc]',
+    badgeClass: 'bg-[#121a2f] text-white',
+  },
+  {
+    name: 'M.Sc. Valeria Campos',
+    role: 'Traductora y Editora Científica',
+    department: 'REDACCIÓN',
+    bgClass: 'bg-[#fff5eb]',
+    badgeClass: 'bg-[#10b981] text-white', // green
+  },
+  {
+    name: 'Dr. Rodrigo Fuentes',
+    role: 'Revisor de Pares Experto',
+    department: 'REDACCIÓN',
+    bgClass: 'bg-[#ecfdf5]',
+    badgeClass: 'bg-[#10b981] text-white',
+  },
+  {
+    name: 'Lic. Daniela Ríos',
+    role: 'Especialista en Reportes Clínicos',
+    department: 'INVESTIGACIÓN',
+    bgClass: 'bg-[#f8fafc]',
+    badgeClass: 'bg-[#10b981] text-white',
+  }
+];
+---
+
+<Layout title="Equipo | FyGrad">
+  <Navbar />
+
+  <main class="w-full flex flex-col items-center">
+    
+    {/* 1. Hero Equipo */}
+    <section class="w-full bg-[#132338] pt-32 pb-24 px-8 relative overflow-hidden flex justify-center">
+      {/* Decorative Background Shapes */}
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1a2c47] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 opacity-50"></div>
+      
+      {/* Bottom curved overlap illusion */}
+      <div class="absolute -bottom-[200px] left-1/2 -translate-x-1/2 w-[120%] h-[300px] bg-[#fffaf5] rounded-[100%] opacity-10"></div>
+      <div class="absolute -bottom-[250px] left-1/2 -translate-x-1/2 w-[150%] h-[300px] bg-white rounded-[100%]"></div>
+
+      <div class="max-w-6xl lg:max-w-[75rem] w-full relative z-10 flex flex-col justify-center pb-12">
+        <div class="flex items-center space-x-2 text-sm font-bold tracking-widest mb-6 uppercase">
+          <span class="text-[#8c96a4]">INICIO</span>
+          <span class="text-[#e68424]">/</span>
+          <span class="text-[#e68424]">EQUIPO</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-black leading-[0.9] tracking-tighter uppercase mb-8 max-w-4xl">
+          <span class="text-white">MENTE DETRAS DEL</span><br/>
+          <span class="text-[#e68424]">ARTÍCULO</span>
+        </h1>
+        
+        <p class="text-[#8c96a4] text-lg md:text-xl max-w-2xl leading-relaxed">
+          Investigadores, bioestadísticos y editores enfocados en estructurar, analizar y publicar ciencia de alta calidad.
+        </p>
+      </div>
+    </section>
+
+    {/* 2. Equipo Grid */}
+    <section class="w-full bg-white py-16 px-8 flex justify-center relative z-20">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-col">
+        
+        <h2 class="text-3xl md:text-4xl font-black text-[#121a2f] leading-none tracking-tighter uppercase mb-12">
+          EQUIPO DE TRABAJO
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {teamMembers.map((member) => (
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:-translate-y-1 transition-transform group">
+              
+              {/* Top Colored Half */}
+              <div class={`${member.bgClass} h-40 relative flex justify-center items-center`}>
+                {/* Photo Placeholder */}
+                <div class="w-24 h-24 rounded-full bg-black/5"></div>
+                
+                {/* Badge */}
+                <div class="absolute bottom-4 left-6">
+                  <span class={`${member.badgeClass} px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase`}>
+                    {member.department}
+                  </span>
+                </div>
+              </div>
+
+              {/* Bottom White Half */}
+              <div class="p-6 md:p-8 flex flex-col flex-grow bg-white">
+                <h3 class="text-[#121a2f] font-bold text-lg mb-1">{member.name}</h3>
+                <p class="text-gray-400 text-xs mb-8">{member.role}</p>
+                
+                <div class="mt-auto">
+                  <div class="w-full h-[1px] bg-gray-100 mb-4"></div>
+                  <a href="#" class="inline-flex items-center justify-between w-full text-[#121a2f] hover:text-[#e68424] transition-colors group-hover:translate-x-1 transform duration-300">
+                    <span class="text-xs font-bold">Ver informacion</span>
+                    <ArrowRight size={14} className="text-gray-300" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    {/* 3. Stats Section */}
+    <section class="w-full bg-[#f8fafc] pt-8 pb-32 px-8 flex justify-center">
+      <div class="max-w-5xl lg:max-w-6xl w-full">
+        
+        <div class="w-full border border-gray-200 rounded-[2rem] bg-white overflow-hidden shadow-sm">
+          <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            
+            <div class="flex flex-col items-center justify-center p-12 text-center">
+              <div class="text-[#e68424] font-black text-5xl md:text-6xl leading-none mb-4">9+</div>
+              <p class="text-gray-500 font-bold text-xs md:text-sm tracking-wide">Especialistas Activos</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center p-12 text-center">
+              <div class="text-[#e68424] font-black text-4xl md:text-5xl leading-none mb-4">(Insertar cantidad)</div>
+              <p class="text-gray-500 font-bold text-xs md:text-sm tracking-wide">Artículos Q1 Publicados</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center p-12 text-center">
+              <div class="text-[#e68424] font-black text-5xl md:text-6xl leading-none mb-4">300+</div>
+              <p class="text-gray-500 font-bold text-xs md:text-sm tracking-wide">Manuscritos Evaluados</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

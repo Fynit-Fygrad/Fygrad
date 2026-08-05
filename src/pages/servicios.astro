@@ -1,0 +1,517 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Star, Plus, ArrowRight } from 'lucide-react';
+---
+
+<Layout title="Servicios | FyGrad">
+  <Navbar />
+
+  <main class="w-full flex flex-col items-center">
+    
+    {/* 1. Hero Servicios */}
+    <section class="w-full bg-[#132338] pt-24 pb-16 px-8 relative overflow-hidden flex justify-center border-b border-white/5">
+      {/* Subtle Grid Background */}
+      <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 50px 50px;"></div>
+      {/* Ambient glowing blobs */}
+      <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#1a2c47] rounded-full blur-[100px] translate-x-1/3 opacity-60 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#e68424]/10 rounded-full blur-[120px] translate-y-1/3 pointer-events-none"></div>
+
+      <div class="max-w-6xl lg:max-w-[75rem] w-full relative z-10 flex flex-col pt-10">
+        
+        <div class="flex items-center space-x-2 text-sm font-bold tracking-widest mb-10 uppercase">
+          <span class="text-[#8c96a4]">Inicio</span>
+          <span class="text-[#e68424]">/</span>
+          <span class="text-[#e68424]">Servicios</span>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-20">
+          <div class="flex flex-col max-w-3xl">
+            <h1 class="text-6xl md:text-[5.5rem] lg:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase mb-8">
+              <span class="block text-white">NUESTROS</span>
+              <span class="block text-[#e68424]">SERVICIOS</span>
+              <span class="block text-transparent" style="-webkit-text-stroke: 1.5px rgba(255,255,255,0.4);">CIENTÍFICOS</span>
+            </h1>
+            <p class="text-[#8c96a4] text-lg md:text-xl max-w-2xl leading-relaxed">
+              Apoyamos a investigadores, docentes y equipos científicos con soluciones integrales: desde la concepción metodológica hasta la publicación en revistas de alto impacto.
+            </p>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4 shrink-0 pb-4">
+            <button class="bg-[#e68424] hover:bg-[#cf741d] text-white px-8 py-3.5 rounded-full font-bold transition-colors">
+              Ver servicios
+            </button>
+            <button class="bg-transparent border border-white/30 text-white hover:bg-white/10 px-8 py-3.5 rounded-full font-bold transition-colors">
+              Contactar
+            </button>
+          </div>
+        </div>
+
+        {/* Stats Row */}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-x-0 md:divide-x divide-white/10 pt-10 border-t border-white/10">
+          
+          <div class="flex flex-col items-center justify-center text-center">
+            <div class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-none mb-3 flex items-center">
+              320 <span class="text-[#e68424] ml-2">+</span>
+            </div>
+            <p class="text-[#8c96a4] font-bold text-xs tracking-widest uppercase">Publicaciones asistidas</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center text-center">
+            <div class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-none mb-3 flex items-center">
+              98 <span class="text-[#e68424] ml-2">%</span>
+            </div>
+            <p class="text-[#8c96a4] font-bold text-xs tracking-widest uppercase">Satisfacción del cliente</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center text-center">
+            <div class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-none mb-3 flex items-center">
+              15 <span class="text-[#e68424] ml-2">+</span>
+            </div>
+            <p class="text-[#8c96a4] font-bold text-xs tracking-widest uppercase">Años de experiencia</p>
+          </div>
+
+          <div class="flex flex-col items-center justify-center text-center">
+            <div class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-none mb-3 flex items-center">
+              5 <span class="text-[#e68424] ml-2">+</span>
+            </div>
+            <p class="text-[#8c96a4] font-bold text-xs tracking-widest uppercase">Países atendidos</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    {/* 2. Líneas de Trabajo */}
+    <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-col">
+        
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+          <div>
+            <h3 class="text-[#e68424] font-black tracking-widest uppercase text-sm mb-4 inline-block border-b-2 border-[#e68424] pb-1">LO QUE OFRECEMOS</h3>
+            <h2 class="text-4xl md:text-5xl font-black text-[#121a2f] leading-none tracking-tighter uppercase">
+              LÍNEAS DE TRABAJO
+            </h2>
+          </div>
+          <div class="mt-6 md:mt-0 max-w-sm text-right hidden md:block">
+            <p class="text-[#64748b] text-sm">
+              Cada servicio está diseñado para acompañarte en una etapa clave del proceso de investigación científica.
+            </p>
+          </div>
+        </div>
+
+        {/* Filters */}
+        <div class="flex flex-wrap items-center gap-3 mb-12">
+          <button class="px-6 py-2 rounded-full bg-[#e68424] text-white text-xs font-bold uppercase tracking-wider">TODOS</button>
+          <button class="px-6 py-2 rounded-full bg-white border border-gray-200 text-[#475569] hover:border-[#e68424] hover:text-[#e68424] transition-colors text-xs font-bold uppercase tracking-wider">EDITORIAL</button>
+          <button class="px-6 py-2 rounded-full bg-white border border-gray-200 text-[#475569] hover:border-[#e68424] hover:text-[#e68424] transition-colors text-xs font-bold uppercase tracking-wider">METODOLOGÍA</button>
+          <button class="px-6 py-2 rounded-full bg-white border border-gray-200 text-[#475569] hover:border-[#e68424] hover:text-[#e68424] transition-colors text-xs font-bold uppercase tracking-wider">CAPACITACIÓN</button>
+          <button class="px-6 py-2 rounded-full bg-white border border-gray-200 text-[#475569] hover:border-[#e68424] hover:text-[#e68424] transition-colors text-xs font-bold uppercase tracking-wider">CALIDAD</button>
+          <button class="px-6 py-2 rounded-full bg-white border border-gray-200 text-[#475569] hover:border-[#e68424] hover:text-[#e68424] transition-colors text-xs font-bold uppercase tracking-wider">TECNOLOGÍA</button>
+        </div>
+
+        {/* Grid Cards */}
+        <div class="flex flex-wrap justify-center gap-6">
+          
+          {/* Card 1: PUBLICATION */}
+          <div class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-full border-[3px] border-[#fb8500]/30 bg-[#fb8500]/10 flex justify-center items-center mb-6">
+               <div class="w-4 h-4 rounded-full border-2 border-[#fb8500]"></div>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-[#94a3b8] font-bold text-sm">01</span>
+              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ EDITORIAL ]</span>
+            </div>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">PUBLICATION</h4>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
+              Asesoría en la selección de revistas indexadas, adaptación al formato del manuscrito y acompañamiento en el envío y revisión por pares.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Selección estratégica de revistas (Scopus, WoS)
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Revisión de estructura IMRyD
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Respuesta a revisores pares
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <button class="w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          {/* Card 2: RESEARCH */}
+          <div class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-full border-[3px] border-[#00a2af]/30 bg-[#00a2af]/10 flex justify-center items-center mb-6">
+               <div class="w-4 h-4 rounded-full border-2 border-[#00a2af]"></div>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-[#94a3b8] font-bold text-sm">02</span>
+              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ METODOLOGÍA ]</span>
+            </div>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">RESEARCH</h4>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
+              Diseño metodológico completo, análisis estadístico de datos en R o Python y estructuración robusta de pruebas de hipótesis.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Diseño de protocolos de investigación
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Procesamiento estadístico avanzado
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Soporte para comités de ética
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <button class="w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          {/* Card 3: ACADEMY */}
+          <div class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-full border-[3px] border-[#ffb703]/30 bg-[#ffb703]/10 flex justify-center items-center mb-6">
+               <div class="w-4 h-4 rounded-full border-2 border-[#ffb703]"></div>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-[#94a3b8] font-bold text-sm">03</span>
+              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ CAPACITACIÓN ]</span>
+            </div>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">ACADEMY</h4>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
+              Talleres prácticos de redacción científica, capacitación en herramientas de análisis y mentorías individuales.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Talleres de redacción científica
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Cursos de bioestadística aplicada
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Mentorías individuales personalizadas
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <button class="w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          {/* Card 4: REVIEW */}
+          <div class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-full border-[3px] border-[#475569]/30 bg-[#475569]/10 flex justify-center items-center mb-6">
+               <div class="w-4 h-4 rounded-full border-2 border-[#475569]"></div>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-[#94a3b8] font-bold text-sm">04</span>
+              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ CALIDAD ]</span>
+            </div>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">REVIEW</h4>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
+              Corrección de estilo científico, adaptación a normas de citado internacional y detección de similitud de textos.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Normas APA / Vancouver / IEEE
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Revisión preliminar por pares
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Reportes de originalidad Turnitin
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <button class="w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          {/* Card 5: DEVELOPMENT */}
+          <div class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform">
+            <div class="w-12 h-12 rounded-full border-[3px] border-[#22c55e]/30 bg-[#22c55e]/10 flex justify-center items-center mb-6">
+               <div class="w-4 h-4 rounded-full border-2 border-[#22c55e]"></div>
+            </div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-[#94a3b8] font-bold text-sm">05</span>
+              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ TECNOLOGÍA ]</span>
+            </div>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">DEVELOPMENT</h4>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
+              Creación de bases de datos relacionales, dashboards interactivos y sitios web para divulgación científica.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Bases de datos seguras en la nube
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Dashboards interactivos de indicadores
+              </li>
+              <li class="flex items-start text-xs text-[#64748b]">
+                <span class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"></span> Repositorios de open science
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <button class="w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* 3. Proceso Timeline */}
+    <section class="w-full bg-[#121a2f] py-24 px-8 flex justify-center border-t border-[#1a2c47]">
+      <div class="max-w-5xl lg:max-w-6xl w-full flex flex-col items-center">
+        
+        <div class="text-center mb-20">
+          <h3 class="text-[#00a2af] font-black tracking-widest uppercase text-sm mb-4">PROCESO</h3>
+          <h2 class="text-3xl md:text-5xl font-black text-white leading-none tracking-tighter uppercase mb-6">
+            ¿CÓMO TRABAJAMOS?
+          </h2>
+          <p class="text-[#8c96a4] text-sm md:text-base max-w-xl mx-auto">
+            Un flujo de trabajo claro, transparente y orientado a resultados desde el primer contacto.
+          </p>
+        </div>
+
+        {/* Timeline Grid */}
+        <div class="w-full relative">
+          {/* Horizontal Line connecting steps */}
+          <div class="hidden md:block absolute top-8 left-0 w-full h-[1px] bg-[#e68424]/30 z-0"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+            
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">1</div>
+              <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">DIAGNÓSTICO</h4>
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+                Analizamos tu proyecto, objetivos y el estado actual de tu investigación.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">2</div>
+              <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">PROPUESTA</h4>
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+                Te presentamos una propuesta a medida con cronograma y presupuesto.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">3</div>
+              <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">EJECUCIÓN</h4>
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+                Nuestro equipo trabaja de forma colaborativa con seguimiento continuo.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">4</div>
+              <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">PUBLICACIÓN</h4>
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+                Acompañamos el envío final hasta la aceptación en la revista objetivo.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    {/* 4. Testimonios */}
+    <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-col items-center">
+        
+        <div class="text-center mb-16">
+          <h3 class="text-[#e68424] font-black tracking-widest uppercase text-xl mb-2">TESTIMONIOS</h3>
+          <h2 class="text-3xl md:text-5xl font-black text-[#121a2f] leading-none tracking-tighter uppercase">
+            LO QUE DICEN NUESTROS CLIENTES
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          {/* Review 1 */}
+          <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex text-[#fb8500] mb-6">
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} />
+              </div>
+              <p class="text-[#64748b] italic leading-relaxed text-sm mb-10">
+                "El servicio de Publication fue clave para que mi artículo fuera aceptado en una revista Q1."
+              </p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-[#e68424] text-white flex items-center justify-center font-bold text-xs">RG</div>
+              <div>
+                <p class="text-[#121a2f] font-bold text-xs">Rosa G.</p>
+                <p class="text-gray-400 text-[10px] uppercase">Investigadora — Universidad Continental</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Review 2 */}
+          <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex text-[#fb8500] mb-6">
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} />
+              </div>
+              <p class="text-[#64748b] italic leading-relaxed text-sm mb-10">
+                "El módulo de Research me ayudó a estructurar un protocolo que aprobó el comité de ética."
+              </p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-[#00a2af] text-white flex items-center justify-center font-bold text-xs">MP</div>
+              <div>
+                <p class="text-[#121a2f] font-bold text-xs">Mg. Marco P.</p>
+                <p class="text-gray-400 text-[10px] uppercase">Docente investigador — UPCH</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Review 3 */}
+          <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex text-[#fb8500] mb-6">
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} className="mr-1" />
+                <Star size={16} fill="currentColor" strokeWidth={0} />
+              </div>
+              <p class="text-[#64748b] italic leading-relaxed text-sm mb-10">
+                "Los talleres de Academy transformaron mi forma de escribir. Mi productividad subió 300%."
+              </p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-[#121a2f] text-white flex items-center justify-center font-bold text-xs">SC</div>
+              <div>
+                <p class="text-[#121a2f] font-bold text-xs">Sophia C.</p>
+                <p class="text-gray-400 text-[10px] uppercase">PhD Student — Universidad de Chile</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    {/* 5. Preguntas Frecuentes (FAQ) */}
+    <section class="w-full bg-white py-24 px-8 flex justify-center">
+      <div class="max-w-4xl w-full flex flex-col items-center">
+        
+        <h2 class="text-3xl md:text-4xl font-black text-[#121a2f] leading-none tracking-tighter uppercase mb-16 text-center">
+          PREGUNTAS FRECUENTES
+        </h2>
+
+        <div class="w-full flex flex-col space-y-4">
+          
+          <details class="group bg-white border border-gray-200 rounded-2xl p-6 open:shadow-sm transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-[#121a2f] text-lg list-none marker:hidden outline-none">
+              ¿Cuánto tiempo toma el proceso de publicación?
+              <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-open:rotate-45 transition-transform shrink-0 ml-4">
+                <Plus size={16} />
+              </span>
+            </summary>
+            <p class="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">
+              El tiempo varía según la revista y el estado del manuscrito. En promedio, 2-4 semanas de preparación y 2-8 meses de revisión editorial.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-2xl p-6 open:shadow-sm transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-[#121a2f] text-lg list-none marker:hidden outline-none">
+              ¿Trabajan con investigadores de cualquier área?
+              <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-open:rotate-45 transition-transform shrink-0 ml-4">
+                <Plus size={16} />
+              </span>
+            </summary>
+            <p class="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">
+              Sí. Tenemos especial fortaleza en ciencias de la salud, naturales e ingeniería, además de humanidades, ciencias sociales y educación.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-2xl p-6 open:shadow-sm transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-[#121a2f] text-lg list-none marker:hidden outline-none">
+              ¿Ofrecen garantía de aceptación en revistas?
+              <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-open:rotate-45 transition-transform shrink-0 ml-4">
+                <Plus size={16} />
+              </span>
+            </summary>
+            <p class="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">
+              No garantizamos aceptación —ningún servicio ético puede hacerlo—, pero sí que tu manuscrito llegará al proceso de revisión en las mejores condiciones posibles.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-2xl p-6 open:shadow-sm transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-[#121a2f] text-lg list-none marker:hidden outline-none">
+              ¿Cómo es el proceso de pago?
+              <span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-open:rotate-45 transition-transform shrink-0 ml-4">
+                <Plus size={16} />
+              </span>
+            </summary>
+            <p class="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">
+              Trabajamos con planes flexibles: 50% al inicio y 50% al finalizar. Aceptamos transferencias, PayPal y tarjetas internacionales.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    {/* 6. Contacto CTA Section */}
+    <section class="w-full bg-[#132338] py-24 px-8 flex justify-center text-center">
+      <div class="max-w-3xl w-full flex flex-col items-center">
+        <h3 class="text-[#e68424] font-black tracking-widest uppercase text-xl md:text-2xl mb-2">¿LISTO PARA PUBLICAR?</h3>
+        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight tracking-tighter uppercase mb-6">
+          ¿TIENES UN PROYECTO<br/>
+          <span class="text-[#e68424]">EN MENTE?</span>
+        </h2>
+        <p class="text-[#8c96a4] text-sm md:text-base max-w-lg mb-10">
+          Escríbenos y conversemos sobre cómo podemos ayudarte a estructurar, mejorar y publicar tu investigación científica.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#" class="inline-flex items-center space-x-2 bg-[#e68424] hover:bg-[#cf741d] text-white px-8 py-3.5 rounded-full font-bold transition-colors text-sm">
+            <span>Contáctanos ahora</span>
+            <ArrowRight size={16} />
+          </a>
+          <a href="#" class="inline-flex items-center justify-center border border-white/20 text-white hover:bg-white/5 px-8 py-3.5 rounded-full font-bold transition-colors text-sm">
+            Ver proyectos
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+
+  <style>
+    /* Add a global rule just for details marker if not covered by tailwind marker:hidden */
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</Layout>

@@ -1,30 +1,27 @@
 ---
 import { FaWhatsapp } from 'react-icons/fa';
 import pkg from 'lucide-react';
-const { X } = pkg;
+const { X, ShoppingCart } = pkg;
 ---
 
 <nav class="relative w-full z-40 flex items-center justify-between px-8 md:px-12 py-5 bg-[#132338]">
-  {/* Logo Placeholder */}
-  <div class="flex items-center space-x-1.5 z-50">
-    <div class="flex flex-col items-center space-y-1">
-      <div class="w-[0.4rem] h-[0.4rem] bg-[#fca311] rounded-full"></div>
-      <div class="w-[0.4rem] h-5 bg-[#fca311] rounded-full"></div>
-    </div>
-    <div class="flex flex-col items-center space-y-1 mt-3">
-      <div class="w-[0.4rem] h-[0.4rem] bg-[#f97316] rounded-full"></div>
-      <div class="w-[0.4rem] h-5 bg-[#f97316] rounded-full"></div>
-    </div>
-  </div>
+  <a href="/" class="flex items-center z-50 hover:opacity-80 transition-opacity">
+    <img src="/assets/Logo FyGrad.svg" alt="FyGrad Logo" class="h-10 md:h-12" />
+  </a>
 
   <div class="flex items-center space-x-6 md:space-x-8 z-50">
-    <a 
-      href="#" 
-      class="bg-[#00a2af] hover:bg-[#008f9c] transition-colors text-white font-normal py-1.5 px-4 rounded-full flex items-center space-x-2 text-xs md:text-sm tracking-wide shadow-sm"
-    >
-      <span>Agenda</span>
-      <FaWhatsapp size={14} class="md:w-[16px] md:h-[16px]" />
-    </a>
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-[#00a2af] hover:text-white transition-colors">
+        <ShoppingCart size={24} strokeWidth={2} />
+      </a>
+      <a 
+        href="#" 
+        class="bg-[#00a2af] hover:bg-[#008f9c] transition-colors text-white font-normal py-1.5 px-4 rounded-full flex items-center space-x-2 text-xs md:text-sm tracking-wide shadow-sm"
+      >
+        <span>Agenda</span>
+        <FaWhatsapp size={14} className="md:w-[16px] md:h-[16px]" />
+      </a>
+    </div>
 
     <button id="menu-open" class="flex flex-col justify-between w-8 h-[1.1rem] hover:opacity-80 transition-opacity group">
       <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
@@ -42,39 +39,43 @@ const { X } = pkg;
   {/* Sidebar Container */}
   <div 
     id="sidebar" 
-    class="absolute top-0 right-0 w-full sm:w-[450px] md:w-[500px] h-full bg-[#0a111c] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
+    class="absolute top-0 right-0 w-full sm:w-[450px] md:w-[400px] h-full bg-[#132338] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
   >
-    {/* Sidebar Header (Matches Navbar exactly) */}
-    <div class="flex items-center justify-between px-8 md:px-12 py-5 bg-[#132338] border-b border-[#0a111c]/50 shadow-sm">
+    {/* Sidebar Header */}
+    <div class="flex items-center justify-between px-8 md:px-12 py-5 md:py-6">
       
-      {/* Logo Replica inside sidebar */}
-      <div class="flex items-center space-x-1.5">
-        <div class="flex flex-col items-center space-y-1">
-          <div class="w-[0.4rem] h-[0.4rem] bg-[#fca311] rounded-full"></div>
-          <div class="w-[0.4rem] h-5 bg-[#fca311] rounded-full"></div>
-        </div>
-        <div class="flex flex-col items-center space-y-1 mt-3">
-          <div class="w-[0.4rem] h-[0.4rem] bg-[#f97316] rounded-full"></div>
-          <div class="w-[0.4rem] h-5 bg-[#f97316] rounded-full"></div>
-        </div>
-      </div>
+      <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+        <img src="/assets/Logo FyGrad.svg" alt="FyGrad Logo" class="h-10 md:h-12" />
+      </a>
 
       {/* Close Button */}
-      <button id="menu-close" class="flex items-center space-x-1.5 text-[#00a2af] hover:opacity-80 transition-opacity">
-        <X size={28} strokeWidth={2.5} />
-        <span class="text-xl md:text-2xl font-black lowercase tracking-tight">cerrar</span>
+      <button id="menu-close" class="flex items-center text-white hover:text-[#00a2af] transition-colors p-2 -mr-2">
+        <X size={32} strokeWidth={1.5} />
       </button>
       
     </div>
 
-    {/* Sidebar Links (Aligned perfectly with Logo) */}
-    <div class="flex flex-col px-8 md:px-12 pt-16 pb-12 space-y-10 overflow-y-auto">
-       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_NOSOTROS</a>
-       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_SERVICIOS</a>
-       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_PROYECTOS</a>
-       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_ECOSISTEMA</a>
-       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_BLOG</a>
-       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_CONTÁCTANOS</a>
+    {/* Sidebar Links */}
+    <div class="flex flex-col px-8 md:px-12 pt-8 flex-grow overflow-y-auto">
+      <div class="flex flex-col space-y-6 md:space-y-8">
+        <a href="/nosotros" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">NOSOTROS</a>
+        <a href="/servicios" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">SERVICIOS</a>
+        <a href="/proyectos" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">PROYECTOS</a>
+        <a href="/equipo" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">EQUIPO</a>
+        <a href="/ecosistema" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">ECOSISTEMA</a>
+        <a href="/blog" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">BLOG</a>
+        <a href="/contacto" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">CONTÁCTANOS</a>
+      </div>
+      
+      {/* Bottom Social Links */}
+      <div class="mt-auto pb-8 pt-12">
+        <div class="w-full h-px bg-white/10 mb-6"></div>
+        <div class="flex items-center space-x-6 md:space-x-8">
+          <a href="#" class="text-sm text-[#94a3b8] hover:text-white transition-colors">Facebook</a>
+          <a href="#" class="text-sm text-[#94a3b8] hover:text-white transition-colors">Instagram</a>
+          <a href="#" class="text-sm text-[#94a3b8] hover:text-white transition-colors">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -86,21 +87,29 @@ const { X } = pkg;
   const sidebar = document.getElementById('sidebar');
 
   if (menuOpen && menuClose && mobileMenu && sidebar) {
+    // Función para cerrar el menú
+    const closeMenu = () => {
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+      sidebar.classList.add('translate-x-full');
+    };
+
     menuOpen.addEventListener('click', () => {
       mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
       sidebar.classList.remove('translate-x-full');
     });
 
-    menuClose.addEventListener('click', () => {
-      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-      sidebar.classList.add('translate-x-full');
-    });
+    menuClose.addEventListener('click', closeMenu);
 
     mobileMenu.addEventListener('click', (e) => {
       if (e.target === mobileMenu) {
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-        sidebar.classList.add('translate-x-full');
+        closeMenu();
       }
+    });
+
+    // Cerrar el menú automáticamente al hacer clic en un enlace del sidebar
+    const sidebarLinks = sidebar.querySelectorAll('a');
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
   }
 </script>
