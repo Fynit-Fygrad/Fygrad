@@ -1,0 +1,106 @@
+---
+import { FaWhatsapp } from 'react-icons/fa';
+import pkg from 'lucide-react';
+const { X } = pkg;
+---
+
+<nav class="relative w-full z-40 flex items-center justify-between px-8 md:px-12 py-5 bg-[#132338]">
+  {/* Logo Placeholder */}
+  <div class="flex items-center space-x-1.5 z-50">
+    <div class="flex flex-col items-center space-y-1">
+      <div class="w-[0.4rem] h-[0.4rem] bg-[#fca311] rounded-full"></div>
+      <div class="w-[0.4rem] h-5 bg-[#fca311] rounded-full"></div>
+    </div>
+    <div class="flex flex-col items-center space-y-1 mt-3">
+      <div class="w-[0.4rem] h-[0.4rem] bg-[#f97316] rounded-full"></div>
+      <div class="w-[0.4rem] h-5 bg-[#f97316] rounded-full"></div>
+    </div>
+  </div>
+
+  <div class="flex items-center space-x-6 md:space-x-8 z-50">
+    <a 
+      href="#" 
+      class="bg-[#00a2af] hover:bg-[#008f9c] transition-colors text-white font-normal py-1.5 px-4 rounded-full flex items-center space-x-2 text-xs md:text-sm tracking-wide shadow-sm"
+    >
+      <span>Agenda</span>
+      <FaWhatsapp size={14} class="md:w-[16px] md:h-[16px]" />
+    </a>
+
+    <button id="menu-open" class="flex flex-col justify-between w-8 h-[1.1rem] hover:opacity-80 transition-opacity group">
+      <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
+      <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
+      <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
+    </button>
+  </div>
+</nav>
+
+{/* Mobile Menu Overlay / Sidebar */}
+<div 
+  id="mobile-menu" 
+  class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300"
+>
+  {/* Sidebar Container */}
+  <div 
+    id="sidebar" 
+    class="absolute top-0 right-0 w-full sm:w-[450px] md:w-[500px] h-full bg-[#0a111c] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
+  >
+    {/* Sidebar Header (Matches Navbar exactly) */}
+    <div class="flex items-center justify-between px-8 md:px-12 py-5 bg-[#132338] border-b border-[#0a111c]/50 shadow-sm">
+      
+      {/* Logo Replica inside sidebar */}
+      <div class="flex items-center space-x-1.5">
+        <div class="flex flex-col items-center space-y-1">
+          <div class="w-[0.4rem] h-[0.4rem] bg-[#fca311] rounded-full"></div>
+          <div class="w-[0.4rem] h-5 bg-[#fca311] rounded-full"></div>
+        </div>
+        <div class="flex flex-col items-center space-y-1 mt-3">
+          <div class="w-[0.4rem] h-[0.4rem] bg-[#f97316] rounded-full"></div>
+          <div class="w-[0.4rem] h-5 bg-[#f97316] rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Close Button */}
+      <button id="menu-close" class="flex items-center space-x-1.5 text-[#00a2af] hover:opacity-80 transition-opacity">
+        <X size={28} strokeWidth={2.5} />
+        <span class="text-xl md:text-2xl font-black lowercase tracking-tight">cerrar</span>
+      </button>
+      
+    </div>
+
+    {/* Sidebar Links (Aligned perfectly with Logo) */}
+    <div class="flex flex-col px-8 md:px-12 pt-16 pb-12 space-y-10 overflow-y-auto">
+       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_NOSOTROS</a>
+       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_SERVICIOS</a>
+       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_PROYECTOS</a>
+       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_ECOSISTEMA</a>
+       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_BLOG</a>
+       <a href="#" class="text-[2.25rem] md:text-[2.5rem] leading-none font-black text-white hover:text-[#00a2af] transition-colors uppercase tracking-tight">_CONTÁCTANOS</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuOpen = document.getElementById('menu-open');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const sidebar = document.getElementById('sidebar');
+
+  if (menuOpen && menuClose && mobileMenu && sidebar) {
+    menuOpen.addEventListener('click', () => {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+      sidebar.classList.remove('translate-x-full');
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+      sidebar.classList.add('translate-x-full');
+    });
+
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        sidebar.classList.add('translate-x-full');
+      }
+    });
+  }
+</script>
