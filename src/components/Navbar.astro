@@ -1,31 +1,30 @@
 ---
-import { FaWhatsapp } from 'react-icons/fa';
 import { X, ShoppingCart } from 'lucide-react';
 ---
 
 <nav class="relative w-full z-40 flex items-center justify-between px-8 md:px-12 py-5 bg-[#132338]">
-  <a href="/" class="flex items-center z-50 hover:opacity-80 transition-opacity">
+  <a href="/" class="flex items-center z-50 hover:opacity-80 hover:scale-105 transition-all duration-300">
     <img src="/assets/Logo FyGrad.svg" alt="FyGrad Logo" class="h-10 md:h-12" />
   </a>
 
   <div class="flex items-center space-x-6 md:space-x-8 z-50">
     <div class="flex items-center space-x-4">
-      <a href="/checkout" class="text-[#00a2af] hover:text-white transition-colors">
+      <a href="/checkout" class="text-[#00a2af] hover:text-white hover:scale-110 active:scale-95 transition-all duration-300">
         <ShoppingCart size={24} strokeWidth={2} />
       </a>
       <a 
         href="#" 
-        class="bg-[#00a2af] hover:bg-[#008f9c] transition-colors text-white font-normal py-1.5 px-4 rounded-full flex items-center space-x-2 text-xs md:text-sm tracking-wide shadow-sm"
+        class="bg-[#00a2af] hover:bg-[#008f9c] hover:shadow-[0_0_15px_rgba(0,162,175,0.5)] hover:-translate-y-0.5 active:translate-y-0 active:scale-95 transition-all duration-300 text-white font-normal py-1.5 px-4 rounded-full flex items-center space-x-2 text-xs md:text-sm tracking-wide"
       >
         <span>Agenda</span>
-        <FaWhatsapp size={14} className="md:w-[16px] md:h-[16px]" />
+        <svg viewBox="0 0 448 512" fill="currentColor" class="w-3.5 h-3.5 md:w-4 md:h-4"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.8c-32 0-63.1-8.3-90.6-24l-6.4-3.7-67.2 17.6 18-65.5-4.1-6.6C56 302.3 45 264.4 45 224.1 45 125.6 125.6 45 224 45c47.8 0 92.8 18.6 126.6 52.4 33.7 33.8 52.3 78.7 52.3 126.6 0 98.6-79.6 179.8-179 179.8zM298.5 282.8c-4.1-2.1-24.3-12-28.1-13.4-3.8-1.4-6.6-2.1-9.4 2.1-2.8 4.2-10.7 13.4-13.1 16.2-2.4 2.8-4.8 3.2-8.9 1.1-4.1-2.1-17.3-6.4-33-20.4-12.2-10.9-20.5-24.4-22.9-28.6-2.4-4.2-.3-6.5 1.8-8.6 1.9-1.9 4.1-4.9 6.2-7.3 2.1-2.4 2.8-4.2 4.2-7 1.4-2.8.7-5.3-.3-7.3-1.1-2.1-9.4-22.7-12.9-31.1-3.4-8.2-6.9-7.1-9.4-7.2-2.4-.1-5.2-.1-8-.1-2.8 0-7.3 1.1-11.1 5.3-3.8 4.2-14.6 14.3-14.6 34.8 0 20.5 15 40.4 17.1 43.2 2.1 2.8 29.5 45 71.5 63.1 10 4.3 17.8 6.9 23.9 8.8 10 3.2 19.1 2.7 26.3 1.6 8.1-1.2 24.3-9.9 27.7-19.5 3.4-9.6 3.4-17.8 2.4-19.5-1-1.7-3.8-2.7-7.9-4.8z"/></svg>
       </a>
     </div>
 
-    <button id="menu-open" class="flex flex-col justify-between w-8 h-[1.1rem] hover:opacity-80 transition-opacity group">
-      <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
-      <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
-      <span class="w-full h-[2px] bg-[#00a2af] rounded-full"></span>
+    <button id="menu-open" class="flex flex-col justify-between w-8 h-[1.1rem] hover:scale-110 active:scale-95 transition-all duration-300 group">
+      <span class="w-full h-0.5 bg-[#00a2af] rounded-full group-hover:bg-white transition-colors"></span>
+      <span class="w-full h-0.5 bg-[#00a2af] rounded-full group-hover:bg-white transition-colors"></span>
+      <span class="w-full h-0.5 bg-[#00a2af] rounded-full group-hover:bg-white transition-colors"></span>
     </button>
   </div>
 </nav>
@@ -33,46 +32,46 @@ import { X, ShoppingCart } from 'lucide-react';
 {/* Mobile Menu Overlay / Sidebar */}
 <div 
   id="mobile-menu" 
-  class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300"
+  class="fixed inset-0 z-100 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-500 backdrop-blur-sm"
 >
   {/* Sidebar Container */}
   <div 
     id="sidebar" 
-    class="absolute top-0 right-0 w-full sm:w-[450px] md:w-[400px] h-full bg-[#132338] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
+    class="absolute top-0 right-0 w-full sm:w-112.5 md:w-100 h-full bg-[#132338] transform translate-x-full transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) flex flex-col shadow-2xl"
   >
     {/* Sidebar Header */}
     <div class="flex items-center justify-between px-8 md:px-12 py-5 md:py-6">
       
-      <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+      <a href="/" class="flex items-center hover:opacity-80 hover:scale-105 transition-all duration-300">
         <img src="/assets/Logo FyGrad.svg" alt="FyGrad Logo" class="h-10 md:h-12" />
       </a>
 
       {/* Close Button */}
-      <button id="menu-close" class="flex items-center text-white hover:text-[#00a2af] transition-colors p-2 -mr-2">
+      <button id="menu-close" class="flex items-center text-white hover:text-[#00a2af] hover:rotate-90 hover:scale-110 transition-all duration-300 p-2 -mr-2">
         <X size={32} strokeWidth={1.5} />
       </button>
       
     </div>
 
     {/* Sidebar Links */}
-    <div class="flex flex-col px-8 md:px-12 pt-8 flex-grow overflow-y-auto">
-      <div class="flex flex-col space-y-6 md:space-y-8">
-        <a href="/nosotros" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">NOSOTROS</a>
-        <a href="/servicios" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">SERVICIOS</a>
-        <a href="/proyectos" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">PROYECTOS</a>
-        <a href="/equipo" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">EQUIPO</a>
-        <a href="/ecosistema" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">ECOSISTEMA</a>
-        <a href="/blog" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">BLOG</a>
-        <a href="/contacto" class="text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-white transition-colors uppercase tracking-wide">CONTÁCTANOS</a>
+    <div class="flex flex-col px-8 md:px-12 pt-8 grow overflow-y-auto">
+      <div class="flex flex-col space-y-6 md:space-y-8" id="sidebar-links-container">
+        <a href="/nosotros" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">NOSOTROS</a>
+        <a href="/servicios" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">SERVICIOS</a>
+        <a href="/proyectos" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">PROYECTOS</a>
+        <a href="/equipo" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">EQUIPO</a>
+        <a href="/ecosistema" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">ECOSISTEMA</a>
+        <a href="/blog" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">BLOG</a>
+        <a href="/contacto" class="sidebar-link opacity-0 translate-y-8 text-[1.75rem] md:text-[2rem] leading-none font-black text-[#cbd5e1] hover:text-[#00a2af] hover:translate-x-2 transition-all duration-300 uppercase tracking-wide">CONTÁCTANOS</a>
       </div>
       
       {/* Bottom Social Links */}
-      <div class="mt-auto pb-8 pt-12">
+      <div class="mt-auto pb-8 pt-12 sidebar-footer opacity-0 translate-y-8 transition-all duration-500">
         <div class="w-full h-px bg-white/10 mb-6"></div>
         <div class="flex items-center space-x-6 md:space-x-8">
-          <a href="#" class="text-sm text-[#94a3b8] hover:text-white transition-colors">Facebook</a>
-          <a href="#" class="text-sm text-[#94a3b8] hover:text-white transition-colors">Instagram</a>
-          <a href="#" class="text-sm text-[#94a3b8] hover:text-white transition-colors">LinkedIn</a>
+          <a href="#" class="text-sm text-gray-title hover:text-white hover:-translate-y-1 transition-all duration-300">Facebook</a>
+          <a href="#" class="text-sm text-gray-title hover:text-white hover:-translate-y-1 transition-all duration-300">Instagram</a>
+          <a href="#" class="text-sm text-gray-title hover:text-white hover:-translate-y-1 transition-all duration-300">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -84,17 +83,45 @@ import { X, ShoppingCart } from 'lucide-react';
   const menuClose = document.getElementById('menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
   const sidebar = document.getElementById('sidebar');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sidebarFooter = document.querySelector('.sidebar-footer');
 
   if (menuOpen && menuClose && mobileMenu && sidebar) {
     // Función para cerrar el menú
     const closeMenu = () => {
       mobileMenu.classList.add('opacity-0', 'pointer-events-none');
       sidebar.classList.add('translate-x-full');
+      
+      // Reset animations
+      sidebarLinks.forEach(link => {
+        link.classList.remove('opacity-100', 'translate-y-0');
+        link.classList.add('opacity-0', 'translate-y-8');
+      });
+      if(sidebarFooter) {
+        sidebarFooter.classList.remove('opacity-100', 'translate-y-0');
+        sidebarFooter.classList.add('opacity-0', 'translate-y-8');
+      }
     };
 
     menuOpen.addEventListener('click', () => {
       mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
       sidebar.classList.remove('translate-x-full');
+
+      // Staggered animation for links
+      sidebarLinks.forEach((link, index) => {
+        setTimeout(() => {
+          link.classList.remove('opacity-0', 'translate-y-8');
+          link.classList.add('opacity-100', 'translate-y-0');
+        }, 300 + (index * 80)); // Empieza después de que el sidebar comience a deslizarse
+      });
+
+      // Animate footer
+      if(sidebarFooter) {
+        setTimeout(() => {
+          sidebarFooter.classList.remove('opacity-0', 'translate-y-8');
+          sidebarFooter.classList.add('opacity-100', 'translate-y-0');
+        }, 300 + (sidebarLinks.length * 80));
+      }
     });
 
     menuClose.addEventListener('click', closeMenu);
@@ -105,8 +132,7 @@ import { X, ShoppingCart } from 'lucide-react';
       }
     });
 
-    // Cerrar el menú automáticamente al hacer clic en un enlace del sidebar
-    const sidebarLinks = sidebar.querySelectorAll('a');
+    // Cerrar el menú automáticamente al hacer clic en un enlace
     sidebarLinks.forEach(link => {
       link.addEventListener('click', closeMenu);
     });
