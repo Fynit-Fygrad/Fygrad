@@ -1,4 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import scopusLogo from '../assets/Scopus.svg';
+import scieloLogo from '../assets/Scielo.svg';
+import ieeeLogo from '../assets/IEEE.svg';
+import acmLogo from '../assets/ACM.svg';
+import springerLogo from '../assets/Springer.svg';
 ---
 
 <section class="w-full bg-white py-24 px-8 flex justify-center">
@@ -13,23 +19,23 @@
 
     <div class="w-full flex flex-wrap justify-start items-center gap-6 md:gap-8 lg:gap-10 animate-on-scroll delay-200">
       <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
-        <img src="/assets/Scopus.svg" alt="Scopus" class="h-10 md:h-14 object-contain"/>
+        <Image src={scopusLogo} alt="Scopus" class="h-10 md:h-14 object-contain w-auto"/>
       </div>
       
       <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
-        <img src="/assets/Scielo.svg" alt="SciELO" class="h-10 md:h-14 object-contain"/>
+        <Image src={scieloLogo} alt="SciELO" class="h-10 md:h-14 object-contain w-auto"/>
       </div>
       
       <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
-        <img src="/assets/IEEE.svg" alt="IEEE" class="h-8 md:h-10 object-contain"/>
+        <Image src={ieeeLogo} alt="IEEE" class="h-8 md:h-10 object-contain w-auto"/>
       </div>
       
       <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
-        <img src="/assets/ACM.svg" alt="ACM" class="h-12 md:h-16 object-contain"/>
+        <Image src={acmLogo} alt="ACM" class="h-12 md:h-16 object-contain w-auto"/>
       </div>
       
       <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
-         <img src="/assets/Springer.svg" alt="Springer" class="h-8 md:h-10 object-contain"/>
+         <Image src={springerLogo} alt="Springer" class="h-8 md:h-10 object-contain w-auto"/>
       </div>
     </div>
     
