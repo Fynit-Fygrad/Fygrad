@@ -15,10 +15,10 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
       {/* Subtle Grid Background */}
       <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 50px 50px;"></div>
       {/* Ambient glowing blobs */}
-      <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#1a2c47] rounded-full blur-[100px] translate-x-1/3 opacity-60 pointer-events-none"></div>
-      <div class="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#e68424]/10 rounded-full blur-[120px] translate-y-1/3 pointer-events-none"></div>
+      <div class="absolute top-1/4 right-0 w-150 h-150 bg-[#1a2c47] rounded-full blur-[100px] translate-x-1/3 opacity-60 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-125 h-125 bg-[#e68424]/10 rounded-full blur-[120px] translate-y-1/3 pointer-events-none"></div>
 
-      <div class="max-w-6xl lg:max-w-[75rem] w-full relative z-10 flex flex-col pt-10">
+      <div class="max-w-6xl lg:max-w-300 w-full relative z-10 flex flex-col pt-10">
         
         <div class="flex items-center space-x-2 text-sm font-bold tracking-widest mb-10 uppercase">
           <span class="text-[#8c96a4]">Inicio</span>
@@ -28,7 +28,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
 
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-20">
           <div class="flex flex-col max-w-3xl">
-            <h1 class="text-6xl md:text-[5.5rem] lg:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase mb-8">
+            <h1 class="text-6xl md:text-[5.5rem] lg:text-[7rem] font-black leading-none tracking-tight uppercase mb-8">
               <span class="block text-white">NUESTROS</span>
               <span class="block text-[#e68424]">SERVICIOS</span>
               <span class="block text-transparent" style="-webkit-text-stroke: 1.5px rgba(255,255,255,0.4);">CIENTÍFICOS</span>
@@ -49,7 +49,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
         </div>
 
         {/* Stats Row */}
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-x-0 md:divide-x divide-white/10 pt-10 border-t border-white/10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-x-0 md:divide-x divide-white/10 pt-10 border-t">
           
           <div class="flex flex-col items-center justify-center text-center">
             <div class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-white leading-none mb-3 flex items-center">
@@ -86,7 +86,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
 
     {/* 2. Líneas de Trabajo */}
     <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center">
-      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-col">
+      <div class="max-w-6xl lg:max-w-300 w-full flex flex-col">
         
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
           <div>
@@ -121,10 +121,10 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
                <div class="w-4 h-4 rounded-full border-2 border-[#fb8500]"></div>
             </div>
             <div class="flex justify-between items-center mb-2">
-              <span class="text-[#94a3b8] font-bold text-sm">01</span>
-              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ EDITORIAL ]</span>
+              <span class="text-slate-400 font-bold text-sm">01</span>
+              <span class="text-slate-400 font-bold text-xs tracking-widest">[ EDITORIAL ]</span>
             </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">PUBLICATION</h4>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">Fy Start</h4>
             <p class="text-[#64748b] text-sm leading-relaxed mb-6">
               Asesoría en la selección de revistas indexadas, adaptación al formato del manuscrito y acompañamiento en el envío y revisión por pares.
             </p>
@@ -152,10 +152,10 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
                <div class="w-4 h-4 rounded-full border-2 border-[#00a2af]"></div>
             </div>
             <div class="flex justify-between items-center mb-2">
-              <span class="text-[#94a3b8] font-bold text-sm">02</span>
-              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ METODOLOGÍA ]</span>
+              <span class="text-slate-400 font-bold text-sm">02</span>
+              <span class="text-slate-400 font-bold text-xs tracking-widest">[ METODOLOGÍA ]</span>
             </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">RESEARCH</h4>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">Fy Prime</h4>
             <p class="text-[#64748b] text-sm leading-relaxed mb-6">
               Diseño metodológico completo, análisis estadístico de datos en R o Python y estructuración robusta de pruebas de hipótesis.
             </p>
@@ -183,10 +183,10 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
                <div class="w-4 h-4 rounded-full border-2 border-[#ffb703]"></div>
             </div>
             <div class="flex justify-between items-center mb-2">
-              <span class="text-[#94a3b8] font-bold text-sm">03</span>
-              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ CAPACITACIÓN ]</span>
+              <span class="text-slate-400 font-bold text-sm">03</span>
+              <span class="text-slate-400 font-bold text-xs tracking-widest">[ CAPACITACIÓN ]</span>
             </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">ACADEMY</h4>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">Fy Review</h4>
             <p class="text-[#64748b] text-sm leading-relaxed mb-6">
               Talleres prácticos de redacción científica, capacitación en herramientas de análisis y mentorías individuales.
             </p>
@@ -214,10 +214,10 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
                <div class="w-4 h-4 rounded-full border-2 border-[#475569]"></div>
             </div>
             <div class="flex justify-between items-center mb-2">
-              <span class="text-[#94a3b8] font-bold text-sm">04</span>
-              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ CALIDAD ]</span>
+              <span class="text-slate-400 font-bold text-sm">04</span>
+              <span class="text-slate-400 font-bold text-xs tracking-widest">[ CALIDAD ]</span>
             </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">REVIEW</h4>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">Fy Titulación</h4>
             <p class="text-[#64748b] text-sm leading-relaxed mb-6">
               Corrección de estilo científico, adaptación a normas de citado internacional y detección de similitud de textos.
             </p>
@@ -245,10 +245,10 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
                <div class="w-4 h-4 rounded-full border-2 border-[#22c55e]"></div>
             </div>
             <div class="flex justify-between items-center mb-2">
-              <span class="text-[#94a3b8] font-bold text-sm">05</span>
-              <span class="text-[#94a3b8] font-bold text-xs tracking-widest">[ TECNOLOGÍA ]</span>
+              <span class="text-slate-400 font-bold text-sm">05</span>
+              <span class="text-slate-400 font-bold text-xs tracking-widest">[ TECNOLOGÍA ]</span>
             </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">DEVELOPMENT</h4>
+            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">Development lab</h4>
             <p class="text-[#64748b] text-sm leading-relaxed mb-6">
               Creación de bases de datos relacionales, dashboards interactivos y sitios web para divulgación científica.
             </p>
@@ -291,14 +291,14 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
         {/* Timeline Grid */}
         <div class="w-full relative">
           {/* Horizontal Line connecting steps */}
-          <div class="hidden md:block absolute top-8 left-0 w-full h-[1px] bg-[#e68424]/30 z-0"></div>
+          <div class="hidden md:block absolute top-8 left-0 w-full h-px bg-[#e68424]/30 z-0"></div>
 
           <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
             
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">1</div>
               <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">DIAGNÓSTICO</h4>
-              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-50">
                 Analizamos tu proyecto, objetivos y el estado actual de tu investigación.
               </p>
             </div>
@@ -306,7 +306,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">2</div>
               <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">PROPUESTA</h4>
-              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-50">
                 Te presentamos una propuesta a medida con cronograma y presupuesto.
               </p>
             </div>
@@ -314,7 +314,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">3</div>
               <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">EJECUCIÓN</h4>
-              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-50">
                 Nuestro equipo trabaja de forma colaborativa con seguimiento continuo.
               </p>
             </div>
@@ -322,7 +322,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 rounded-full bg-[#e68424] flex items-center justify-center text-white text-2xl font-black shadow-[0_0_0_8px_#121a2f] mb-6">4</div>
               <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-sm">PUBLICACIÓN</h4>
-              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-[200px]">
+              <p class="text-[#8c96a4] text-xs leading-relaxed max-w-50">
                 Acompañamos el envío final hasta la aceptación en la revista objetivo.
               </p>
             </div>
@@ -335,7 +335,7 @@ import { Star, Plus, ArrowRight } from 'lucide-react';
 
     {/* 4. Testimonios */}
     <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center">
-      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-col items-center">
+      <div class="max-w-6xl lg:max-w-300 w-full flex flex-col items-center">
         
         <div class="text-center mb-16">
           <h3 class="text-[#e68424] font-black tracking-widest uppercase text-xl mb-2">TESTIMONIOS</h3>
