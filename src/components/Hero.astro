@@ -1,8 +1,10 @@
 ---
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 ---
 
-<section class="relative w-full min-h-150 h-[90vh] max-h-250 flex items-center justify-center overflow-hidden">
+<section
+  class="relative w-full min-h-150 h-[90vh] max-h-250 flex items-center justify-center overflow-hidden"
+>
   {/* Video de fondo */}
   <div class="absolute inset-0 z-0 bg-primary">
     <video
@@ -15,23 +17,35 @@ import { ChevronDown } from 'lucide-react';
       <source src="/assets/Video de fondo.mp4" type="video/mp4" />
     </video>
   </div>
-  
+
   {/* Overlay oscuro para mejorar legibilidad */}
-  <div class="absolute inset-0 bg-linear-to-br from-[#0c1a30]/80 to-[#0a4f66]/60 z-10"></div>
+  <div
+    class="absolute inset-0 bg-linear-to-br from-[#0c1a30]/80 to-[#0a4f66]/60 z-10"
+  >
+  </div>
 
-    {/* Contenido principal */}
-  <div class="relative z-20 text-center px-4 md:px-8 w-full max-w-6xl mx-auto flex flex-col items-center">
-
-    <h1 class="text-6xl md:text-8xl lg:text-[8rem] font-bold text-white tracking-tighter drop-shadow-2xl leading-none">
+  {/* Contenido principal */}
+  <div
+    class="relative z-20 text-center px-4 md:px-8 w-full max-w-6xl mx-auto flex flex-col items-center"
+  >
+    <h1
+      class="text-6xl md:text-8xl lg:text-[8rem] font-bold text-white tracking-tighter drop-shadow-2xl leading-none"
+    >
       FyGrad
     </h1>
-    <p class="text-3xl md:text-5xl lg:text-[3.5rem] text-[#0ea5e9] font-light mt-6 md:mt-10 tracking-normal">
+    <p
+      class="text-3xl md:text-5xl lg:text-[3.5rem] text-[#0ea5e9] font-light mt-6 md:mt-10 tracking-normal"
+    >
       science, published
     </p>
   </div>
 
   {/* Scroll Down Arrow */}
   <div class="absolute bottom-4 md:bottom-8 z-20 animate-bounce">
-    <ChevronDown size={80} className="text-white md:w-24 md:h-24" strokeWidth={1.2} />
+    <ChevronDown
+      size={80}
+      className="text-white md:w-24 md:h-24"
+      strokeWidth={1.2}
+    />
   </div>
 </section>
