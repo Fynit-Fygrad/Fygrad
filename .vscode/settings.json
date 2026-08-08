@@ -5,5 +5,8 @@
   "tailwindCSS.lint.cssConflict": "ignore",
   "files.associations": {
     "*.css": "tailwindcss"
-  }
+  },
+  "css.customData": [
+    ".vscode/css-custom-data.json"
+  ]
 }
