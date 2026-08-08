@@ -9,8 +9,9 @@ import { X, ShoppingCart } from 'lucide-react';
 
   <div class="flex items-center space-x-6 md:space-x-8 z-50">
     <div class="flex items-center space-x-4">
-      <a href="/checkout" class="text-[#00a2af] hover:text-white hover:scale-110 active:scale-95 transition-all duration-300">
+      <a href="/checkout" class="relative text-[#00a2af] hover:text-white hover:scale-110 active:scale-95 transition-all duration-300">
         <ShoppingCart size={24} strokeWidth={2} />
+        <span id="cart-badge" class="absolute -top-2 -right-2 bg-[#e63946] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full opacity-0 transition-opacity duration-300">0</span>
       </a>
       <a 
         href="#" 
@@ -137,4 +138,29 @@ import { X, ShoppingCart } from 'lucide-react';
       link.addEventListener('click', closeMenu);
     });
   }
+
+  // Cart Badge Logic
+  const updateCartBadge = () => {
+    const cartBadge = document.getElementById('cart-badge');
+    if (!cartBadge) return;
+    
+    const cart = JSON.parse(localStorage.getItem('fygrad_cart') || '[]');
+    const count = cart.length;
+    
+    cartBadge.textContent = count;
+    if (count > 0) {
+      cartBadge.classList.remove('opacity-0');
+      cartBadge.classList.add('opacity-100');
+    } else {
+      cartBadge.classList.remove('opacity-100');
+      cartBadge.classList.add('opacity-0');
+    }
+  };
+
+  // Update on load
+  updateCartBadge();
+  
+  // Listen for custom events from other components (like Add to Cart)
+  document.addEventListener('cart-updated', updateCartBadge);
+
 </script>

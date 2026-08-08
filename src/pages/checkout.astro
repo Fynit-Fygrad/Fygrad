@@ -29,7 +29,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 		</section>
 
 		{/* Checkout Content area */}
-		<section class="w-full bg-[#f8fafc] text-[#0f172a] px-4 md:px-12 py-12 relative flex-grow min-h-screen">
+		<section class="w-full bg-[#f8fafc] text-[#0f172a] px-4 md:px-12 py-12 relative grow min-h-screen">
 			<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 				
 				{/* Left Column: Order Summary */}
@@ -51,32 +51,9 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 							{/* Dashed divider */}
 							<div class="w-full border-t border-dashed border-gray-200 mb-6"></div>
 
-							{/* Item 1 */}
-							<div class="flex flex-col mb-8">
-								<div class="flex justify-between items-start mb-2">
-									<h4 class="font-bold text-[15px]">Publication Lab</h4>
-									<span class="font-bold">S/ 1,200.00</span>
-								</div>
-								<p class="text-sm text-gray-500 leading-tight mb-3">Plan Editorial Completo —<br/>revistas indexadas Scopus/WoS</p>
-								<div class="flex items-center space-x-3 w-fit border border-gray-200 rounded-full px-3 py-1">
-									<button class="text-gray-400 hover:text-black transition-colors"><Minus size={14} strokeWidth={3} /></button>
-									<span class="text-sm font-bold w-4 text-center">1</span>
-									<button class="text-gray-400 hover:text-black transition-colors"><Plus size={14} strokeWidth={3} /></button>
-								</div>
-							</div>
-
-							{/* Item 2 */}
-							<div class="flex flex-col mb-8">
-								<div class="flex justify-between items-start mb-2">
-									<h4 class="font-bold text-[15px]">Academy</h4>
-									<span class="font-bold">S/ 350.00</span>
-								</div>
-								<p class="text-sm text-gray-500 leading-tight mb-3">Taller de redacción científica bajo IMRyD</p>
-								<div class="flex items-center space-x-3 w-fit border border-gray-200 rounded-full px-3 py-1">
-									<button class="text-gray-400 hover:text-black transition-colors"><Minus size={14} strokeWidth={3} /></button>
-									<span class="text-sm font-bold w-4 text-center">1</span>
-									<button class="text-gray-400 hover:text-black transition-colors"><Plus size={14} strokeWidth={3} /></button>
-								</div>
+							{/* Cart Items Container */}
+							<div id="checkout-items" class="flex flex-col mb-6">
+								<p class="text-gray-500 italic text-sm">Cargando carrito...</p>
 							</div>
 
 							{/* Dashed divider */}
@@ -86,18 +63,18 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 							<div class="flex flex-col space-y-2 mb-6">
 								<div class="flex justify-between text-sm text-gray-500 font-medium">
 									<span>Subtotal</span>
-									<span>S/ 1,313.56</span>
+									<span>S/ 0.00</span>
 								</div>
 								<div class="flex justify-between text-sm text-gray-500 font-medium">
 									<span>IGV (18%)</span>
-									<span>S/ 236.44</span>
+									<span>S/ 0.00</span>
 								</div>
 							</div>
 
 							{/* Total */}
 							<div class="flex justify-between items-center mb-8">
 								<span class="text-lg font-black">Total a pagar</span>
-								<span class="text-xl font-black text-[#f97316]">S/ 1,550.00</span>
+								<span class="text-xl font-black text-[#f97316]">S/ 0.00</span>
 							</div>
 
 							{/* Back Button */}
@@ -110,7 +87,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 						{/* Zigzag bottom border effect */}
 						<div class="absolute bottom-0 left-0 w-full h-3 flex overflow-hidden">
 							{Array.from({ length: 30 }).map(() => (
-								<div class="w-4 h-4 bg-[#f8fafc] transform rotate-45 translate-y-2 -mx-[2px] border-t border-l border-gray-100"></div>
+								<div class="w-4 h-4 bg-[#f8fafc] transform rotate-45 translate-y-2 -mx-0.5 border-t border-l border-gray-100"></div>
 							))}
 						</div>
 					</div>
@@ -118,21 +95,21 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 					{/* Barcode decorative element */}
 					<div class="mt-4 flex space-x-1 pl-8 items-end h-8">
 						<div class="w-1 bg-gray-300 h-8"></div>
-						<div class="w-[2px] bg-gray-300 h-6"></div>
+						<div class="w-0.5 bg-gray-300 h-6"></div>
 						<div class="w-1 bg-gray-300 h-7"></div>
-						<div class="w-[3px] bg-gray-300 h-5"></div>
+						<div class="w-0.75 bg-gray-300 h-5"></div>
 						<div class="w-1 bg-gray-300 h-8"></div>
-						<div class="w-[2px] bg-gray-300 h-7"></div>
+						<div class="w-0.5 bg-gray-300 h-7"></div>
 						<div class="w-1 bg-gray-300 h-6"></div>
-						<div class="w-[2px] bg-gray-300 h-8"></div>
+						<div class="w-0.5 bg-gray-300 h-8"></div>
 						<div class="w-1 bg-gray-300 h-5"></div>
-						<div class="w-[2px] bg-gray-300 h-7"></div>
+						<div class="w-0.5 bg-gray-300 h-7"></div>
 						<div class="w-1 bg-gray-300 h-6"></div>
-						<div class="w-[3px] bg-gray-300 h-8"></div>
+						<div class="w-0.75 bg-gray-300 h-8"></div>
 						<div class="w-1 bg-gray-300 h-7"></div>
-						<div class="w-[2px] bg-gray-300 h-5"></div>
+						<div class="w-0.5 bg-gray-300 h-5"></div>
 						<div class="w-1 bg-gray-300 h-8"></div>
-						<div class="w-[2px] bg-gray-300 h-6"></div>
+						<div class="w-0.5 bg-gray-300 h-6"></div>
 						<div class="w-1 bg-gray-300 h-7"></div>
 					</div>
 				</div>
@@ -168,7 +145,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 								<input 
 									type="text" 
 									placeholder="Como aparece en la tarjeta" 
-									class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+									class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#00a2af] transition-colors"
 								/>
 							</div>
 
@@ -179,7 +156,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 									<input 
 										type="text" 
 										placeholder="0000 0000 0000 0000" 
-										class="w-full border border-gray-300 rounded-lg pl-4 pr-12 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+										class="w-full border border-gray-300 rounded-lg pl-4 pr-12 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#00a2af] transition-colors"
 									/>
 									<div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
 										<CreditCard size={20} strokeWidth={1.5} />
@@ -194,7 +171,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 									<input 
 										type="text" 
 										placeholder="00000000" 
-										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#00a2af] transition-colors"
 									/>
 								</div>
 								<div class="flex flex-col space-y-2">
@@ -202,7 +179,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 									<input 
 										type="text" 
 										placeholder="MM / AA" 
-										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#00a2af] transition-colors"
 									/>
 								</div>
 								<div class="flex flex-col space-y-2">
@@ -213,7 +190,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 									<input 
 										type="text" 
 										placeholder="123" 
-										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#00a2af] focus:ring-1 focus:ring-[#00a2af] transition-colors"
+										class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#00a2af] transition-colors"
 									/>
 								</div>
 							</div>
@@ -233,7 +210,7 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 							{/* Submit Button */}
 							<div class="pt-4 pb-2">
 								<button type="button" class="w-full bg-[#f97316] hover:bg-[#ea580c] text-white rounded-full py-4 font-bold text-lg transition-colors flex items-center justify-center space-x-2 relative shadow-md">
-									<span>Confirmar y pagar S/ 1,550.00</span>
+									<span>Confirmar y pagar S/ 0.00</span>
 									<div class="absolute right-6">
 										<Lock size={20} strokeWidth={2.5} />
 									</div>
@@ -273,4 +250,62 @@ import { ChevronLeft, Plus, Minus, Lock, CreditCard, HelpCircle, ArrowLeft } fro
 		</footer>
 
 	</main>
+
+	<script>
+		interface CartItem {
+			id: string;
+			name: string;
+			price: number;
+		}
+
+		declare global {
+			interface Window {
+				removeCheckoutItem: (id: string) => void;
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const checkoutItems = document.getElementById('checkout-items');
+			if (!checkoutItems) return;
+			
+			const loadCart = () => {
+				const cart: CartItem[] = JSON.parse(localStorage.getItem('fygrad_cart') || '[]');
+				
+				if (cart.length === 0) {
+					checkoutItems.innerHTML = `
+						<div class="text-center py-4">
+							<p class="text-gray-400 text-sm">Tu carrito está vacío.</p>
+						</div>
+					`;
+					return;
+				}
+
+				checkoutItems.innerHTML = cart.map((item: CartItem, index: number) => `
+					<div class="flex flex-col mb-6">
+						<div class="flex justify-between items-start mb-2">
+							<h4 class="font-bold text-[15px]">${item.name}</h4>
+							<span class="font-bold text-gray-500">S/ 0.00</span>
+						</div>
+						<div class="flex justify-between items-center">
+							<p class="text-xs text-gray-400 uppercase tracking-widest">Servicio FyGrad</p>
+							<button onclick="window.removeCheckoutItem('${item.id}')" class="text-xs text-[#e63946] hover:underline font-bold transition-colors">
+								Eliminar
+							</button>
+						</div>
+					</div>
+				`).join('');
+			};
+
+			loadCart();
+
+			// Make function available globally for inline onclick
+			window.removeCheckoutItem = (id: string) => {
+				let cart: CartItem[] = JSON.parse(localStorage.getItem('fygrad_cart') || '[]');
+				cart = cart.filter((item: CartItem) => item.id !== id);
+				localStorage.setItem('fygrad_cart', JSON.stringify(cart));
+				loadCart();
+				document.dispatchEvent(new Event('cart-updated'));
+			};
+		});
+	</script>
 </Layout>
