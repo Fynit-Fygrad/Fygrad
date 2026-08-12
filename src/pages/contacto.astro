@@ -21,9 +21,9 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 
       <div class="max-w-6xl lg:max-w-300 w-full relative z-10 flex flex-col pt-4 pb-12">
         <div class="flex items-center space-x-2 text-sm font-bold tracking-widest mb-6 uppercase">
-          <span class="text-[#8c96a4]">INICIO</span>
+          <a href="/" class="text-[#8c96a4] hover:text-white transition-colors">INICIO</a>
           <span class="text-[#e68424]">/</span>
-          <span class="text-[#e68424]">CONTACTO</span>
+          <a href="/contacto" class="text-[#e68424] hover:underline">CONTACTO</a>
         </div>
         
         <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-black leading-none tracking-tighter uppercase mb-6 max-w-4xl text-white">
@@ -89,7 +89,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
                     type="text" 
                     id="nombre"
                     placeholder="Tu nombre" 
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-[#121a2f] outline-none focus:border-[#e68424] transition-colors placeholder:text-gray-400"
+                    class="w-full text-sm text-[#121a2f] placeholder:text-gray-400 border border-gray-200 focus:border-[#e68424] rounded-xl px-4 py-3 outline-none transition-colors"
                   />
                 </div>
 
@@ -99,7 +99,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
                     type="email" 
                     id="correo"
                     placeholder="nombre@correo.com" 
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-[#121a2f] outline-none focus:border-[#e68424] transition-colors placeholder:text-gray-400"
+                    class="w-full text-sm text-[#121a2f] placeholder:text-gray-400 border border-gray-200 focus:border-[#e68424] rounded-xl px-4 py-3 outline-none transition-colors"
                   />
                 </div>
 
@@ -111,7 +111,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
                 <div class="relative">
                   <select 
                     id="servicio"
-                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-[#121a2f] outline-none focus:border-[#e68424] transition-colors appearance-none bg-white cursor-pointer"
+                    class="w-full text-sm text-[#121a2f] bg-white border border-gray-200 focus:border-[#e68424] rounded-xl px-4 py-3 outline-none transition-colors appearance-none cursor-pointer"
                   >
                     <option>Publication — Soporte Editorial</option>
                     <option>Academy — Mentoring y Asesoría</option>
@@ -132,7 +132,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
                   id="mensaje"
                   rows={4}
                   placeholder="Describe brevemente de qué trata tu estudio o qué necesitas..." 
-                  class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-[#121a2f] outline-none focus:border-[#e68424] transition-colors placeholder:text-gray-400 resize-none"
+                  class="w-full text-sm text-[#121a2f] placeholder:text-gray-400 border border-gray-200 focus:border-[#e68424] rounded-xl px-4 py-3 outline-none transition-colors resize-none"
                 ></textarea>
               </div>
 

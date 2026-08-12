@@ -1,3 +1,4 @@
+/* Tailwind CSS v4 */
 @import "tailwindcss";
 
 @theme {
@@ -9,6 +10,7 @@
   --color-brand-orange: #ff8c00;
   
   --font-sans: "Montserrat", sans-serif;
+  --font-nunito: "Nunito Sans", sans-serif;
 }
 
 @layer base {

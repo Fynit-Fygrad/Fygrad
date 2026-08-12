@@ -60,9 +60,9 @@ const articles = [
 
       <div class="max-w-6xl lg:max-w-300 w-full relative z-10 flex flex-col pt-4 pb-12">
         <div class="flex items-center space-x-2 text-sm font-bold tracking-widest mb-6 uppercase">
-          <span class="text-[#8c96a4]">INICIO</span>
+          <a href="/" class="text-[#8c96a4] hover:text-white transition-colors">INICIO</a>
           <span class="text-[#e68424]">/</span>
-          <span class="text-[#e68424]">BLOG</span>
+          <a href="/blog" class="text-[#e68424] hover:underline">BLOG</a>
         </div>
         
         <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-black leading-none tracking-tighter uppercase mb-6 max-w-4xl">
@@ -80,7 +80,7 @@ const articles = [
           <input 
             type="text" 
             placeholder="Buscar artículos por título o categoría..." 
-            class="w-full bg-white/5 border border-white/10 text-white rounded-lg py-4 pl-12 pr-4 outline-none focus:border-[#e68424] focus:bg-white/10 transition-colors placeholder:text-gray-500 text-sm"
+            class="w-full text-sm text-white placeholder:text-gray-500 bg-white/5 focus:bg-white/10 border border-white/10 focus:border-[#e68424] rounded-lg py-4 pl-12 pr-4 outline-none transition-colors"
           />
         </div>
       </div>
@@ -185,12 +185,12 @@ const articles = [
         </p>
         
         {/* Newsletter Form (Minimalist Underline) */}
-        <form class="w-full max-w-sm flex items-center border-b-2 border-gray-400 pb-2 group focus-within:border-[#121a2f] transition-colors">
+        <form class="w-full max-w-sm flex items-center border-b-2 border-gray-400 pb-2 transition-colors focus-within:border-[#121a2f]">
           <input 
             type="email" 
             placeholder="tu@correo.com" 
             required
-            class="w-full bg-transparent border-none outline-none text-[#121a2f] placeholder:text-gray-400 text-sm font-medium px-2"
+            class="w-full text-sm font-medium text-[#121a2f] placeholder:text-gray-400 bg-transparent border-none outline-none px-2"
           />
           <button 
             type="submit" 
