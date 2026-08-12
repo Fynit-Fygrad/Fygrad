@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { ArrowLeft, ArrowRight, CheckCircle2, Clock, Users, PackageCheck } from 'lucide-react';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.title} | Servicios FyGrad`}>
+  <Navbar />
+
+  <main class="w-full flex flex-col items-center bg-white">
+    
+    {/* 1. Hero Detalles del Servicio */}
+    <section class="w-full bg-[#132338] pt-32 pb-24 px-8 relative overflow-hidden flex justify-center">
+      {/* Crisp Geometric Background Shapes */}
+      <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 120 0 L 750 0 A 400 400 0 0 1 750 700 L -200 700 L -200 180 Z" fill="#233142" opacity="0.8" />
+        <circle cx="1100" cy="300" r="500" fill="#0d182b" opacity="0.6" />
+      </svg>
+      
+      <div class="max-w-6xl lg:max-w-[75rem] w-full relative z-10 flex flex-col pt-4">
+        <div class="flex items-center space-x-2 text-xs md:text-sm tracking-wide mb-6 text-[#8c96a4] font-bold uppercase">
+          <span>INICIO</span>
+          <span>/</span>
+          <span>SERVICIOS</span>
+          <span>/</span>
+          <span class="text-[#e68424]">{service.title.toUpperCase()}</span>
+        </div>
+
+        <span class="text-[#e68424] font-black tracking-widest uppercase mb-4 block text-sm">
+          [ {service.category} ]
+        </span>
+
+        <h1 class="text-4xl md:text-6xl lg:text-[5.5rem] font-black leading-[0.95] tracking-tighter uppercase max-w-5xl">
+          <span class="text-white">{service.heroTitle1}</span><br/>
+          <span class="text-[#e68424]">{service.heroTitle2}</span>
+        </h1>
+      </div>
+    </section>
+
+    {/* 2. Main Content Area */}
+    <section class="w-full px-8 flex justify-center py-16 bg-white relative z-20">
+      <div class="max-w-6xl lg:max-w-[75rem] w-full flex flex-col lg:flex-row gap-16 lg:gap-24">
+        
+        {/* Left Column (Main Article) */}
+        <div class="w-full lg:w-[65%] flex flex-col">
+          
+          <a href="/servicios" class="inline-flex items-center space-x-2 text-[#121a2f] font-black text-xs tracking-widest uppercase hover:opacity-70 transition-opacity mb-8">
+            <ArrowLeft size={16} strokeWidth={3} />
+            <span>VOLVER A SERVICIOS</span>
+          </a>
+
+          <h2 class="text-3xl md:text-4xl font-black text-[#121a2f] leading-tight mb-6">
+            {service.title}
+          </h2>
+
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-10">
+            {service.description}
+          </p>
+
+          {/* Feature List */}
+          <div class="mb-12">
+            <h3 class="text-xl font-black text-[#121a2f] uppercase tracking-tight mb-6">
+              CARACTERÍSTICAS Y ALCANCE
+            </h3>
+
+            <div class="space-y-4">
+              {service.features.map((feature) => (
+                <div class="flex items-start space-x-3 p-4 bg-[#f8fafc] rounded-2xl border border-gray-100">
+                  <CheckCircle2 size={20} className="text-[#e68424] shrink-0 mt-0.5" />
+                  <span class="text-sm font-medium text-gray-700 leading-relaxed">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Deliverables List */}
+          <div>
+            <h3 class="text-xl font-black text-[#121a2f] uppercase tracking-tight mb-6 flex items-center space-x-2">
+              <PackageCheck size={24} className="text-[#e68424]" />
+              <span>ENTREGABLES CLAVE</span>
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {service.deliverables.map((item) => (
+                <div class="p-5 bg-white border border-gray-200 rounded-2xl flex flex-col shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-[#e68424] mb-3"></span>
+                  <span class="text-sm font-bold text-[#121a2f] leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* Right Column (Sidebar Card) */}
+        <div class="w-full lg:w-[35%] flex flex-col">
+          
+          <div class="bg-white border border-gray-100 rounded-3xl p-8 shadow-lg flex flex-col sticky top-28">
+            
+            <div class="flex items-center space-x-3 mb-6">
+              <div 
+                class="w-10 h-10 rounded-full flex items-center justify-center border-2"
+                style={`border-color: ${service.color}; background-color: ${service.color}15;`}
+              >
+                <div class="w-3 h-3 rounded-full" style={`background-color: ${service.color};`}></div>
+              </div>
+              <div>
+                <span class="text-xs font-bold tracking-widest text-gray-400 block">CÓDIGO {service.id}</span>
+                <span class="text-base font-black text-[#121a2f]">{service.title}</span>
+              </div>
+            </div>
+
+            <div class="w-full h-px bg-gray-100 mb-6"></div>
+
+            {/* Quick Specs */}
+            <div class="space-y-6 mb-8">
+              <div class="flex items-start space-x-3">
+                <Clock size={18} className="text-[#e68424] shrink-0 mt-1" />
+                <div>
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest block">DURACIÓN ESTIMADA</span>
+                  <span class="text-sm font-bold text-[#121a2f]">{service.duration}</span>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <Users size={18} className="text-[#e68424] shrink-0 mt-1" />
+                <div>
+                  <span class="text-xs font-bold text-gray-400 uppercase tracking-widest block">PÚBLICO OBJETIVO</span>
+                  <span class="text-sm font-medium text-gray-600 leading-snug block mt-0.5">{service.targetAudience}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full h-px bg-gray-100 mb-8"></div>
+
+            {/* Action Buttons */}
+            <div class="flex flex-col space-y-3">
+              <a
+                href="/contacto"
+                class="w-full bg-[#e68424] hover:bg-[#cf741d] text-white py-3.5 px-6 rounded-2xl font-bold text-sm transition-colors text-center shadow-md shadow-[#e68424]/20"
+              >
+                Solicitar cotización
+              </a>
+              <a
+                href="https://wa.me/51900000000?text=Hola,%20quisiera%20más%20información%20sobre%20el%20servicio%20"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full bg-white border border-gray-200 hover:border-[#121a2f] text-[#121a2f] py-3.5 px-6 rounded-2xl font-bold text-sm transition-colors text-center"
+              >
+                Consultar por WhatsApp
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    {/* 3. CTA Final */}
+    <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center text-center">
+      <div class="max-w-2xl w-full flex flex-col items-center">
+        <h2 class="text-3xl md:text-5xl font-black text-[#121a2f] leading-none tracking-tighter uppercase mb-6">
+          ¿NECESITAS ASESORÍA<br/>EN ESTE SERVICIO?
+        </h2>
+        <p class="text-gray-500 text-sm md:text-base leading-relaxed mb-10">
+          Conversemos con nuestro equipo especializado sobre las necesidades específicas de tu investigación o manuscrito.
+        </p>
+        <a href="/contacto" class="inline-flex items-center space-x-2 bg-transparent hover:bg-[#121a2f] text-[#121a2f] hover:text-white px-8 py-3 rounded-full font-bold transition-colors text-xs border border-[#121a2f]">
+          <span>Contactar a un especialista</span>
+          <ArrowRight size={16} strokeWidth={2.5} />
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

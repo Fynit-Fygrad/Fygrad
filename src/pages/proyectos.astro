@@ -1,67 +1,107 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import { ArrowRight } from 'lucide-react';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { ArrowRight } from "lucide-react";
 
-import { projects } from '../data/projects';
+import { projects } from "../data/projects";
 ---
 
 <Layout title="Proyectos | FyGrad">
   <Navbar />
 
   <main class="w-full flex flex-col items-center bg-white">
-    
     {/* 1. Hero Proyectos */}
-    <section class="w-full bg-[#132338] pt-32 pb-24 px-8 relative overflow-hidden flex justify-center">
+    <section
+      class="w-full bg-[#132338] pt-32 pb-24 px-8 relative overflow-hidden flex justify-center"
+    >
       {/* Crisp Geometric Background Shapes (per mockup) */}
-      <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        class="absolute inset-0 w-full h-full z-0 pointer-events-none"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1440 600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <!-- Main background shape with chamfered top-left and curved right side -->
-        <path d="M 120 0 L 750 0 A 400 400 0 0 1 750 700 L -200 700 L -200 180 Z" fill="#233142" opacity="0.8" />
+        <path
+          d="M 120 0 L 750 0 A 400 400 0 0 1 750 700 L -200 700 L -200 180 Z"
+          fill="#233142"
+          opacity="0.8"></path>
         <!-- Massive overlapping circle on the right -->
-        <circle cx="1100" cy="300" r="500" fill="#0d182b" opacity="0.6" />
+        <circle cx="1100" cy="300" r="500" fill="#0d182b" opacity="0.6"
+        ></circle>
       </svg>
-      
-      {/* Curve overlay for the bottom edge */}
-      <div class="absolute -bottom-37.5 left-1/2 -translate-x-1/2 w-[150%] h-50 bg-[#fffaf5] rounded-[100%] opacity-20"></div>
-      <div class="absolute -bottom-45 left-1/2 -translate-x-1/2 w-[150%] h-50 bg-white rounded-[100%]"></div>
 
-      <div class="max-w-6xl lg:max-w-300 w-full relative z-10 flex flex-col pt-4 pb-12">
+      {/* Curve overlay for the bottom edge */}
+      <div
+        class="absolute -bottom-37.5 left-1/2 -translate-x-1/2 w-[150%] h-50 bg-[#fffaf5] rounded-[100%] opacity-20"
+      >
+      </div>
+      <div
+        class="absolute -bottom-45 left-1/2 -translate-x-1/2 w-[150%] h-50 bg-white rounded-[100%]"
+      >
+      </div>
+
+      <div
+        class="max-w-6xl lg:max-w-300 w-full relative z-10 flex flex-col pt-4 pb-12"
+      >
         <div class="flex items-center space-x-2 text-sm tracking-wide mb-5">
           <a href="/" class="text-[#8c96a4] hover:text-white transition-colors">Inicio</a>
           <span class="text-[#8c96a4]">/</span>
           <a href="/proyectos" class="text-[#e68424] hover:underline">Proyectos</a>
         </div>
-        
-        <span class="text-[#e68424] font-black tracking-widest uppercase mb-4 block text-sm">PRO_YECTOS</span>
 
-        <h1 class="text-5xl md:text-7xl lg:text-[6.5rem] font-black leading-[0.95] tracking-tighter uppercase mb-6 max-w-4xl">
-          <span class="text-white">INVESTIGACIÓN</span><br/>
+        <span
+          class="text-[#e68424] font-black tracking-widest uppercase mb-4 block text-sm"
+          >PROYECTOS</span
+        >
+
+        <h1
+          class="text-5xl md:text-7xl lg:text-[6.5rem] font-black leading-[0.95] tracking-tighter uppercase mb-6 max-w-4xl"
+        >
+          <span class="text-white">INVESTIGACIÓN</span><br />
           <span class="text-[#e68424]">EN MARCHA</span>
         </h1>
-        
-        <p class="text-[#8c96a4] text-lg md:text-xl max-w-2xl leading-relaxed mb-4">
-          Una muestra de los proyectos que hemosacompañado, desde el diseño metodológico hasta su publicación o implementación.
+
+        <p
+          class="text-[#8c96a4] text-lg md:text-xl max-w-2xl leading-relaxed mb-4"
+        >
+          Una muestra de los proyectos que hemosacompañado, desde el diseño
+          metodológico hasta su publicación o implementación.
         </p>
       </div>
     </section>
 
     {/* 2. Filtros de Categoría */}
-    <section class="w-full px-8 flex justify-center py-8 bg-white relative z-20">
-      <div class="max-w-6xl lg:max-w-300 w-full flex flex-wrap gap-4 items-center justify-center md:justify-start">
-        <button class="px-8 py-2.5 rounded-full bg-[#121a2f] text-white text-xs font-bold border border-[#121a2f]">
+    <section
+      class="w-full px-8 flex justify-center py-8 bg-white relative z-20"
+    >
+      <div
+        class="max-w-6xl lg:max-w-300 w-full flex flex-wrap gap-4 items-center justify-center md:justify-start"
+      >
+        <button
+          class="px-8 py-2.5 rounded-full bg-[#121a2f] text-white text-xs font-bold border border-[#121a2f]"
+        >
           Todos
         </button>
-        <button class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+        <button
+          class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold"
+        >
           Research
         </button>
-        <button class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+        <button
+          class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold"
+        >
           Publication
         </button>
-        <button class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+        <button
+          class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold"
+        >
           Academy
         </button>
-        <button class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold">
+        <button
+          class="px-8 py-2.5 rounded-full bg-white text-gray-500 hover:text-[#121a2f] border border-gray-200 hover:border-[#121a2f] transition-colors text-xs font-bold"
+        >
           Development Lab
         </button>
       </div>
@@ -70,59 +110,64 @@ import { projects } from '../data/projects';
     {/* 3. Grilla de Proyectos */}
     <section class="w-full px-8 flex justify-center py-10 pb-24">
       <div class="max-w-6xl lg:max-w-300 w-full">
-        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div class="bg-white border border-gray-100 rounded-3xl flex flex-col shadow-sm hover:-translate-y-1 transition-transform group overflow-hidden">
-              
-              {/* Image Placeholder */}
-              <div class={`w-full h-56 ${project.imagePlaceholderClass}`}></div>
-              
-              {/* Content */}
-              <div class="p-8 flex flex-col grow">
-                
-                <span class="bg-[#e6f4f1] text-[#00a2af] font-bold text-[9px] tracking-widest uppercase mb-4 px-3 py-1.5 rounded-full self-start">
-                  {project.category}
-                </span>
-                
-                <h3 class="text-[#121a2f] font-black text-lg leading-snug mb-4">
-                  {project.title}
-                </h3>
-                
-                <p class="text-gray-500 text-xs leading-relaxed mb-8 grow">
-                  {project.description}
-                </p>
-                
-                <a href={`/proyectos/${project.slug}`} class="inline-flex items-center space-x-2 bg-[#121a2f] hover:bg-[#1a2c47] text-white font-bold text-xs px-6 py-2.5 rounded-full transition-colors self-start">
-                  <span>Ver Proyecto</span>
-                  <ArrowRight size={14} />
-                </a>
+          {
+            projects.map((project) => (
+              <div class="bg-white border border-gray-100 rounded-3xl flex flex-col shadow-sm hover:-translate-y-1 transition-transform group overflow-hidden">
+                {/* Image Placeholder */}
+                <div class={`w-full h-56 ${project.imagePlaceholderClass}`} />
 
+                {/* Content */}
+                <div class="p-8 flex flex-col grow">
+                  <span class="bg-[#e6f4f1] text-[#00a2af] font-bold text-[9px] tracking-widest uppercase mb-4 px-3 py-1.5 rounded-full self-start">
+                    {project.category}
+                  </span>
+
+                  <h3 class="text-[#121a2f] font-black text-lg leading-snug mb-4">
+                    {project.title}
+                  </h3>
+
+                  <p class="text-gray-500 text-xs leading-relaxed mb-8 grow">
+                    {project.description}
+                  </p>
+
+                  <a
+                    href={`/proyectos/${project.slug}`}
+                    class="inline-flex items-center space-x-2 bg-[#121a2f] hover:bg-[#1a2c47] text-white font-bold text-xs px-6 py-2.5 rounded-full transition-colors self-start"
+                  >
+                    <span>Ver Proyecto</span>
+                    <ArrowRight size={14} />
+                  </a>
+                </div>
               </div>
-
-            </div>
-          ))}
+            ))
+          }
         </div>
-
       </div>
     </section>
 
     {/* 4. CTA Final */}
-    <section class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center text-center">
+    <section
+      class="w-full bg-[#f8fafc] py-24 px-8 flex justify-center text-center"
+    >
       <div class="max-w-2xl w-full flex flex-col items-center">
-        <h2 class="text-3xl md:text-5xl font-black text-[#121a2f] leading-none tracking-tighter uppercase mb-6">
-          ¿TIENES UN PROYECTO<br/>PARA PROPONER?
+        <h2
+          class="text-3xl md:text-5xl font-black text-[#121a2f] leading-none tracking-tighter uppercase mb-6"
+        >
+          ¿TIENES UN PROYECTO<br />PARA PROPONER?
         </h2>
         <p class="text-gray-500 text-sm md:text-base leading-relaxed mb-10">
           Cuéntanos de qué se trata y evaluamos cómo podemos acompañarlo.
         </p>
-        <a href="#" class="inline-flex bg-[#e68424] hover:bg-[#cf741d] text-white px-10 py-3.5 rounded-full font-bold transition-colors text-sm">
-          Proponer proyecto_
+        <a
+          href="#"
+          class="inline-flex bg-[#e68424] hover:bg-[#cf741d] text-white px-10 py-3.5 rounded-full font-bold transition-colors text-sm"
+        >
+          Proponer proyecto
         </a>
       </div>
     </section>
-
   </main>
-  
+
   <Footer />
 </Layout>

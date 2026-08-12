@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { Star, Plus, ArrowRight } from "lucide-react";
+import { services } from "../data/services";
 ---
 
 <Layout title="Servicios | FyGrad">
@@ -193,251 +194,51 @@ import { Star, Plus, ArrowRight } from "lucide-react";
 
         {/* Grid Cards */}
         <div class="flex flex-wrap justify-center gap-6">
-          {/* Card 1: PUBLICATION */}
-          <div
-            class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform"
-          >
+          {services.map((service) => (
             <div
-              class="w-12 h-12 rounded-full border-[3px] border-[#fb8500]/30 bg-[#fb8500]/10 flex justify-center items-center mb-6"
+              class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform"
             >
-              <div class="w-4 h-4 rounded-full border-2 border-[#fb8500]"></div>
-            </div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-slate-400 font-bold text-sm">01</span>
-              <span class="text-slate-400 font-bold text-xs tracking-widest"
-                >[ EDITORIAL ]</span
+              <div
+                class="w-12 h-12 rounded-full border-[3px] flex justify-center items-center mb-6"
+                style={`border-color: ${service.color}40; background-color: ${service.color}15;`}
               >
+                <div 
+                  class="w-4 h-4 rounded-full border-2"
+                  style={`border-color: ${service.color};`}
+                ></div>
+              </div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-400 font-bold text-sm">{service.id}</span>
+                <span class="text-slate-400 font-bold text-xs tracking-widest"
+                  >[ {service.category} ]</span
+                >
+              </div>
+              <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">
+                {service.title}
+              </h4>
+              <p class="text-[#64748b] text-sm leading-relaxed mb-6">
+                {service.shortDescription}
+              </p>
+              <ul class="space-y-3 mb-8">
+                {service.features.slice(0, 3).map((feature) => (
+                  <li class="flex items-start text-xs text-[#64748b]">
+                    <span
+                      class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
+                    ></span> {feature}
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-auto">
+                <a
+                  href={`/servicios/${service.slug}`}
+                  class="w-full bg-[#121a2f] text-white py-3.5 px-6 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors flex items-center justify-center space-x-2 group/btn"
+                >
+                  <span>Más información</span>
+                  <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">
-              Fy Start
-            </h4>
-            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
-              Asesoría en la selección de revistas indexadas, adaptación al
-              formato del manuscrito y acompañamiento en el envío y revisión por
-              pares.
-            </p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Selección estratégica de revistas (Scopus, WoS)
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Revisión de estructura IMRyD
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Respuesta a revisores pares
-              </li>
-            </ul>
-            <div class="mt-auto">
-              <button
-                data-name="Fy Start"
-                class="add-to-cart-btn w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors"
-              >
-                Agregar al carrito
-              </button>
-            </div>
-          </div>
-
-          {/* Card 2: RESEARCH */}
-          <div
-            class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform"
-          >
-            <div
-              class="w-12 h-12 rounded-full border-[3px] border-[#00a2af]/30 bg-[#00a2af]/10 flex justify-center items-center mb-6"
-            >
-              <div class="w-4 h-4 rounded-full border-2 border-[#00a2af]"></div>
-            </div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-slate-400 font-bold text-sm">02</span>
-              <span class="text-slate-400 font-bold text-xs tracking-widest"
-                >[ METODOLOGÍA ]</span
-              >
-            </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">
-              Fy Prime
-            </h4>
-            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
-              Diseño metodológico completo, análisis estadístico de datos en R o
-              Python y estructuración robusta de pruebas de hipótesis.
-            </p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Diseño de protocolos de investigación
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Procesamiento estadístico avanzado
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Soporte para comités de ética
-              </li>
-            </ul>
-            <div class="mt-auto">
-              <button
-                data-name="Fy Prime"
-                class="add-to-cart-btn w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors"
-              >
-                Agregar al carrito
-              </button>
-            </div>
-          </div>
-
-          {/* Card 3: ACADEMY */}
-          <div
-            class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform"
-          >
-            <div
-              class="w-12 h-12 rounded-full border-[3px] border-[#ffb703]/30 bg-[#ffb703]/10 flex justify-center items-center mb-6"
-            >
-              <div class="w-4 h-4 rounded-full border-2 border-[#ffb703]"></div>
-            </div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-slate-400 font-bold text-sm">03</span>
-              <span class="text-slate-400 font-bold text-xs tracking-widest"
-                >[ CAPACITACIÓN ]</span
-              >
-            </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">
-              Fy Review
-            </h4>
-            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
-              Talleres prácticos de redacción científica, capacitación en
-              herramientas de análisis y mentorías individuales.
-            </p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Talleres de redacción científica
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Cursos de bioestadística aplicada
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Mentorías individuales personalizadas
-              </li>
-            </ul>
-            <div class="mt-auto">
-              <button
-                data-name="Fy Review"
-                class="add-to-cart-btn w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors"
-              >
-                Agregar al carrito
-              </button>
-            </div>
-          </div>
-
-          {/* Card 4: REVIEW */}
-          <div
-            class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform"
-          >
-            <div
-              class="w-12 h-12 rounded-full border-[3px] border-[#475569]/30 bg-[#475569]/10 flex justify-center items-center mb-6"
-            >
-              <div class="w-4 h-4 rounded-full border-2 border-[#475569]"></div>
-            </div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-slate-400 font-bold text-sm">04</span>
-              <span class="text-slate-400 font-bold text-xs tracking-widest"
-                >[ CALIDAD ]</span
-              >
-            </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">
-              Fy Titulación
-            </h4>
-            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
-              Corrección de estilo científico, adaptación a normas de citado
-              internacional y detección de similitud de textos.
-            </p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Normas APA / Vancouver / IEEE
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Revisión preliminar por pares
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Reportes de originalidad Turnitin
-              </li>
-            </ul>
-            <div class="mt-auto">
-              <button
-                data-name="Fy Titulación"
-                class="add-to-cart-btn w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors"
-              >
-                Agregar al carrito
-              </button>
-            </div>
-          </div>
-
-          {/* Card 5: DEVELOPMENT */}
-          <div
-            class="w-full md:w-[calc(33.333%-16px)] bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:-translate-y-1 transition-transform"
-          >
-            <div
-              class="w-12 h-12 rounded-full border-[3px] border-[#22c55e]/30 bg-[#22c55e]/10 flex justify-center items-center mb-6"
-            >
-              <div class="w-4 h-4 rounded-full border-2 border-[#22c55e]"></div>
-            </div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-slate-400 font-bold text-sm">05</span>
-              <span class="text-slate-400 font-bold text-xs tracking-widest"
-                >[ TECNOLOGÍA ]</span
-              >
-            </div>
-            <h4 class="text-xl font-black text-[#121a2f] mb-4 tracking-tight">
-              Development lab
-            </h4>
-            <p class="text-[#64748b] text-sm leading-relaxed mb-6">
-              Creación de bases de datos relacionales, dashboards interactivos y
-              sitios web para divulgación científica.
-            </p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Bases de datos seguras en la nube
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Dashboards interactivos de indicadores
-              </li>
-              <li class="flex items-start text-xs text-[#64748b]">
-                <span
-                  class="w-1 h-1 bg-[#e68424] rounded-full mt-1.5 mr-3 shrink-0"
-                ></span> Repositorios de open science
-              </li>
-            </ul>
-            <div class="mt-auto">
-              <button
-                data-name="Development lab"
-                class="add-to-cart-btn w-full bg-[#121a2f] text-white py-3.5 rounded-2xl font-bold text-sm hover:bg-[#1a2c47] transition-colors"
-              >
-                Agregar al carrito
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
