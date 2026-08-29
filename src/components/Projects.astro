@@ -2,7 +2,7 @@
 
 ---
 
-<section class="w-full bg-primary py-24 px-8 flex flex-col items-center">
+<section class="w-full bg-[#132338] py-24 px-8 flex flex-col items-center">
   <div class="max-w-4xl lg:max-w-5xl w-full">
     <div
       class="w-full flex flex-col md:flex-row gap-4 mb-12 min-h-75 md:min-h-125"
@@ -12,53 +12,55 @@
         {/* Title */}
         <div class="w-full flex justify-start z-30 animate-on-scroll">
           <h2
-            class="text-[3rem] sm:text-[4rem] md:text-6xl lg:text-[7rem] font-black text-white leading-none tracking-tighter uppercase drop-shadow-xl"
+            class="text-[3rem] sm:text-[4rem] md:text-6xl lg:text-[7rem] font-black leading-none tracking-tight uppercase drop-shadow-xl font-nunito"
           >
-            PROYECTOS
+            <span class="text-[#ff6b35] block">PRO_</span>
+            <span class="text-white block">YECTOS</span>
           </h2>
         </div>
         {/* Large Card */}
-        <div
-          class="w-full bg-[#5d6b7b] hover:bg-[#4f5b66] transition-colors cursor-pointer animate-on-scroll delay-100 flex-1 rounded-sm shadow-xl min-h-62.5"
+        <a
+          href="/proyectos"
+          class="w-full bg-[#5d6b7b] hover:bg-[#4f5b66] transition-colors cursor-pointer animate-on-scroll delay-100 flex-1 rounded-2xl shadow-xl min-h-62.5 overflow-hidden relative group p-6 flex flex-col justify-end"
         >
-        </div>
+          <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10"></div>
+          <span class="relative z-20 text-white font-nunito font-bold text-lg md:text-xl uppercase group-hover:text-[#ff6b35] transition-colors">
+            Impacto del Cambio Climático en la Agricultura Regional
+          </span>
+        </a>
       </div>
 
       {/* Right Column (2 Small Cards) */}
       <div class="w-full md:w-1/3 flex flex-col gap-4 flex-1">
-        <div
-          class="flex-1 bg-[#263346] hover:bg-[#1c2636] transition-colors cursor-pointer animate-on-scroll delay-200 rounded-sm shadow-xl min-h-37.5"
+        <a
+          href="/proyectos"
+          class="flex-1 bg-[#263346] hover:bg-[#1c2636] transition-colors cursor-pointer animate-on-scroll delay-200 rounded-2xl shadow-xl min-h-37.5 overflow-hidden relative group p-6 flex flex-col justify-end"
         >
-        </div>
-        <div
-          class="flex-1 bg-[#8e9ba9] hover:bg-[#7a8591] transition-colors cursor-pointer animate-on-scroll delay-300 rounded-sm shadow-xl min-h-37.5"
+          <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10"></div>
+          <span class="relative z-20 text-white font-nunito font-bold text-base md:text-lg uppercase group-hover:text-[#ff6b35] transition-colors">
+            Modelado Predictivo de Brotes Epidemiológicos
+          </span>
+        </a>
+        <a
+          href="/proyectos"
+          class="flex-1 bg-[#475569] hover:bg-[#334155] transition-colors cursor-pointer animate-on-scroll delay-300 rounded-2xl shadow-xl min-h-37.5 overflow-hidden relative group p-6 flex flex-col justify-end"
         >
-        </div>
+          <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-10"></div>
+          <span class="relative z-20 text-white font-nunito font-bold text-base md:text-lg uppercase group-hover:text-[#ff6b35] transition-colors">
+            Análisis Genómico de Variantes Emergentes
+          </span>
+        </a>
       </div>
     </div>
 
-    <div class="mt-8 md:mt-16 text-center w-full animate-on-scroll delay-400">
+    <div class="mt-8 md:mt-12 text-center w-full animate-on-scroll delay-400 font-nunito">
       <a
         href="/proyectos"
         class="inline-flex items-center justify-center gap-2 text-xl md:text-2xl font-bold text-white hover:opacity-80 transition-opacity uppercase tracking-widest"
       >
         <span>MIRA MÁS PROYECTOS</span>
-        <span class="text-accent inline-flex items-center gap-1">
-          AQUÍ
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
+        <span class="text-[#00a2af] hover:text-[#00c4d4] transition-colors ml-1">
+          AQUÍ_
         </span>
       </a>
     </div>
