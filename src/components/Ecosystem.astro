@@ -7,84 +7,86 @@ import acmLogo from '../assets/ACM.svg';
 import springerLogo from '../assets/Springer.svg';
 ---
 
-<section class="w-full bg-[#132338] py-20 px-8 flex justify-center border-t border-white/5">
-  <div class="max-w-5xl lg:max-w-6xl w-full flex flex-col items-center">
+<section class="w-full bg-white py-24 px-8 flex justify-center">
+  <div class="max-w-5xl w-full flex flex-col items-center md:items-start">
     
-    {/* ECOSISTEMA ACADÉMICO */}
-    <div class="w-full text-center md:text-left mb-12 animate-on-scroll font-nunito">
-      <h2 class="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-none tracking-tight uppercase">
-        <span class="text-[#8c96a4] block">ECOSISTEMA</span>
-        <span class="text-white block italic">ACADÉMICO</span>
+    <div class="w-full text-left mb-16 animate-on-scroll">
+      <h2 class="text-6xl md:text-8xl font-black leading-none tracking-tighter uppercase">
+        <span class="text-gray-title block italic">ECOSISTEMA</span>
+        <span class="text-primary block italic">ACADÉMICO</span>
       </h2>
     </div>
 
-    {/* Centered Logos Carousel Container */}
-    <div class="w-full bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex justify-center items-center mb-24 animate-on-scroll delay-100">
-      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 lg:gap-16 w-full max-w-4xl">
-        <div class="flex items-center opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
-          <Image src={scopusLogo} alt="Scopus" class="h-8 md:h-12 object-contain w-auto"/>
-        </div>
-        
-        <div class="flex items-center opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
-          <Image src={scieloLogo} alt="SciELO" class="h-8 md:h-12 object-contain w-auto"/>
-        </div>
-        
-        <div class="flex items-center opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
-          <Image src={ieeeLogo} alt="IEEE" class="h-6 md:h-10 object-contain w-auto"/>
-        </div>
-        
-        <div class="flex items-center opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
-          <Image src={acmLogo} alt="ACM" class="h-10 md:h-14 object-contain w-auto"/>
-        </div>
-        
-        <div class="flex items-center opacity-85 hover:opacity-100 transition-opacity cursor-pointer">
-          <Image src={springerLogo} alt="Springer" class="h-7 md:h-10 object-contain w-auto"/>
-        </div>
+    <div class="w-full flex flex-wrap justify-start items-center gap-6 md:gap-8 lg:gap-10 animate-on-scroll delay-200">
+      <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+        <Image src={scopusLogo} alt="Scopus" class="h-10 md:h-14 object-contain w-auto"/>
+      </div>
+      
+      <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+        <Image src={scieloLogo} alt="SciELO" class="h-10 md:h-14 object-contain w-auto"/>
+      </div>
+      
+      <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+        <Image src={ieeeLogo} alt="IEEE" class="h-8 md:h-10 object-contain w-auto"/>
+      </div>
+      
+      <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+        <Image src={acmLogo} alt="ACM" class="h-12 md:h-16 object-contain w-auto"/>
+      </div>
+      
+      <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+         <Image src={springerLogo} alt="Springer" class="h-8 md:h-10 object-contain w-auto"/>
       </div>
     </div>
     
-    {/* LO QUE YA LOGRAMOS Section */}
-    <div class="w-full pt-8 flex flex-col items-start font-nunito">
-      <div class="w-full text-left mb-12 animate-on-scroll">
-        <h2 class="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-none tracking-tight uppercase">
-          <span class="text-[#8c96a4] block">LO QUE YA</span>
-          <span class="text-white block italic">LOGRAMOS</span>
-        </h2>
+    {/* Map and Universities Section */}
+    <div class="w-full mt-24 rounded-[2.5rem] overflow-hidden bg-linear-to-br from-[#4a0072] to-[#290042] p-8 md:p-14 text-white relative flex flex-col md:flex-row items-center justify-between shadow-2xl animate-on-scroll">
+      
+      {/* Network Background Pattern (CSS based placeholder) */}
+      <div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent pointer-events-none"></div>
+      
+      {/* Left Content */}
+      <div class="relative z-10 flex flex-col items-start space-y-10 w-full md:w-1/2">
+        
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <span class="text-2xl">🎓</span>
+            <h3 class="text-xl md:text-[1.75rem] font-bold tracking-wide">Todas las Carreras</h3>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-2xl">🎓</span>
+            <h3 class="text-xl md:text-[1.75rem] font-bold tracking-wide">Todas las Universidades</h3>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-2xl">🎓</span>
+            <h3 class="text-xl md:text-[1.75rem] font-bold tracking-wide">Maestrías y Doctorados</h3>
+          </div>
+        </div>
+
+        <div class="flex gap-4 flex-wrap">
+          {/* University Logos Placeholders */}
+          <div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm border border-white/20 w-32 h-16 flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+            <span class="text-xs font-bold text-center">UPC</span>
+          </div>
+          <div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm border border-white/20 w-32 h-16 flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+            <span class="text-xs font-bold text-center">Cayetano Heredia</span>
+          </div>
+          <div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm border border-white/20 w-32 h-16 flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+            <span class="text-xs font-bold text-center">U. Pacífico</span>
+          </div>
+        </div>
+        
+        <p class="text-2xl md:text-[2rem] font-bold mt-8 tracking-tight">¡Titúlate desde donde estes!</p>
       </div>
 
-      <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y-0 md:divide-x divide-white/10 animate-on-scroll delay-200">
-        {/* Metric 1 */}
-        <div class="flex flex-col items-center md:items-center text-center p-4 md:px-6">
-          <span class="text-5xl md:text-7xl lg:text-8xl font-black text-[#00a2af] mb-2 tracking-tight">3</span>
-          <span class="text-xs md:text-sm font-bold text-gray-300 uppercase tracking-wide leading-tight max-w-[140px]">
-            Años de trayectoria
-          </span>
-        </div>
-
-        {/* Metric 2 */}
-        <div class="flex flex-col items-center md:items-center text-center p-4 md:px-6">
-          <span class="text-5xl md:text-7xl lg:text-8xl font-black text-[#00a2af] mb-2 tracking-tight">120+</span>
-          <span class="text-xs md:text-sm font-bold text-gray-300 uppercase tracking-wide leading-tight max-w-[140px]">
-            Investigaciones publicadas
-          </span>
-        </div>
-
-        {/* Metric 3 */}
-        <div class="flex flex-col items-center md:items-center text-center p-4 md:px-6">
-          <span class="text-5xl md:text-7xl lg:text-8xl font-black text-[#00a2af] mb-2 tracking-tight">20+</span>
-          <span class="text-xs md:text-sm font-bold text-gray-300 uppercase tracking-wide leading-tight max-w-[140px]">
-            Expertos en investigación
-          </span>
-        </div>
-
-        {/* Metric 4 */}
-        <div class="flex flex-col items-center md:items-center text-center p-4 md:px-6">
-          <span class="text-5xl md:text-7xl lg:text-8xl font-black text-[#00a2af] mb-2 tracking-tight">4</span>
-          <span class="text-xs md:text-sm font-bold text-gray-300 uppercase tracking-wide leading-tight max-w-[140px]">
-            Presencia en países
-          </span>
+      {/* Right Content: Map Placeholder */}
+      <div class="relative z-10 w-full md:w-1/2 flex justify-center mt-12 md:mt-0">
+        <div class="w-64 md:w-80 h-96 bg-[#d926a9]/20 border-2 border-[#d926a9]/50 rounded-4xl flex flex-col items-center justify-center backdrop-blur-sm shadow-[0_0_60px_rgba(217,38,169,0.3)] p-6">
+           <span class="text-center font-bold text-lg">Mapa del Perú</span>
+           <span class="text-center text-sm opacity-80 mt-2">(Reemplazar con la imagen del mapa de la referencia)</span>
         </div>
       </div>
+      
     </div>
 
   </div>

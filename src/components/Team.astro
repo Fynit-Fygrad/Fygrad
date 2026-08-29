@@ -1,19 +1,12 @@
 ---
-const members = [
-  { name: "ABIGAIL", image: "/assets/EQUIPO/ABIGAIL.png" },
-  { name: "ALEX", image: "/assets/EQUIPO/ALEX.png" },
-  { name: "XIOMARA", image: "/assets/EQUIPO/XIOMARA.png" },
-  { name: "SANDRA", image: "/assets/EQUIPO/SANDRA.png" },
-  { name: "SELENI", image: "/assets/EQUIPO/SELENI.png" },
-  { name: "SEBAS", image: "/assets/EQUIPO/SEBASTIAN.png" },
-];
+
 ---
 
 <section class="w-full bg-[#132338] py-24 px-6 md:px-12 flex justify-center">
   <div class="max-w-5xl lg:max-w-6xl w-full flex flex-col items-center">
     <div class="w-full text-left mb-6 md:mb-10 animate-on-scroll">
       <h2
-        class="text-5xl md:text-[5rem] lg:text-[6rem] font-black text-white italic uppercase tracking-tight font-nunito"
+        class="text-5xl md:text-[5rem] lg:text-[6rem] font-black text-white italic uppercase tracking-tight"
       >
         EQUIPO
       </h2>
@@ -21,44 +14,66 @@ const members = [
 
     {/* Team Grid */}
     <div
-      class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 w-full mx-auto"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 w-full mx-auto shadow-2xl"
     >
-      {members.map((member, idx) => (
-        <a
-          href="/equipo"
-          class="group relative aspect-4/5 md:aspect-3/4 bg-[#e2e8f0] rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1 animate-on-scroll"
-          style={`transition-delay: ${idx * 100}ms`}
-        >
-          <img
-            src={member.image}
-            alt={member.name}
-            class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-          />
-          {/* Subtle bottom gradient vignette */}
-          <div class="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
-          
-          {/* Member Name Overlay */}
-          <span
-            class="absolute bottom-4 left-0 right-0 text-center font-nunito font-black text-2xl sm:text-3xl md:text-4xl text-[#ff6b35] tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-          >
-            {member.name}
-          </span>
-        </a>
-      ))}
+      {/* Box 1 (Top Left) */}
+      <div
+        class="aspect-4/3 bg-[#344050] hover:bg-[#2c3545] transition-colors cursor-pointer animate-on-scroll delay-100"
+      >
+      </div>
+      {/* Box 2 (Top Mid) */}
+      <div
+        class="aspect-4/3 bg-[#455163] hover:bg-[#3b465a] transition-colors cursor-pointer animate-on-scroll delay-200"
+      >
+      </div>
+      {/* Box 3 (Top Right) */}
+      <div
+        class="aspect-4/3 bg-[#344050] hover:bg-[#2c3545] transition-colors cursor-pointer animate-on-scroll delay-300"
+      >
+      </div>
+
+      {/* Box 4 (Bot Left) */}
+      <div
+        class="aspect-4/3 bg-[#455163] hover:bg-[#3b465a] transition-colors cursor-pointer animate-on-scroll delay-100"
+      >
+      </div>
+      {/* Box 5 (Bot Mid) */}
+      <div
+        class="aspect-4/3 bg-[#344050] hover:bg-[#2c3545] transition-colors cursor-pointer animate-on-scroll delay-200"
+      >
+      </div>
+      {/* Box 6 (Bot Right) */}
+      <div
+        class="aspect-4/3 bg-[#455163] hover:bg-[#3b465a] transition-colors cursor-pointer animate-on-scroll delay-300"
+      >
+      </div>
     </div>
 
-    {/* CTA Link */}
     <div
-      class="w-full mx-auto mt-8 md:mt-10 text-right animate-on-scroll delay-400 font-nunito"
+      class="w-full mx-auto mt-6 md:mt-8 text-right animate-on-scroll delay-400"
     >
       <a
         href="/equipo"
-        class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase text-white leading-tight hover:opacity-80 transition-opacity inline-block"
+        class="text-lg md:text-2xl font-bold uppercase text-white leading-tight hover:opacity-80 transition-opacity inline-block"
       >
         NUESTRO EQUIPO<br />
         COMPLETO
-        <span class="text-[#00a2af] hover:text-[#00c4d4] transition-colors ml-2">
-          AQUÍ_
+        <span class="text-[#00a2af] inline-flex items-center gap-1 ml-1.5">
+          AQUÍ
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
         </span>
       </a>
     </div>
